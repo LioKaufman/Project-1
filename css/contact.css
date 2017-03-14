@@ -4,6 +4,7 @@
 	border-color: lightgray;
 	box-shadow: 5px 5px 9px 1px rgba(84,84,84,0.57);
 	background-color: lightblue;
+	height: 650px;
 }
 
 #contactInfo * {
@@ -13,17 +14,33 @@
 #submitForm * {
 	padding: 3px;
 	align-items: center;
+
+}
+#contactSubmitBtn {
+	padding: 5px;
+	border: 1px solid;
+	font-size: 1.2em;
+	margin: 5px;
+}
+ #contactFormItems  {
+ 	padding: 3px;
+ 	font-size: 1.2em;
+ 	
+ }
+
+#contactInfo h2, #submitForm h2 {
+	font-size: 1.6em;
+	font-weight: 600;
+	
 }
 
 
-#contactInfo h2{
-	font-size: 1.6em;
-	font-weight: 600;
-	text-align: center;
 }
 
 #contactInfo h4 {
 	font-size: 1.4em;
+	margin: 1px;
+	padding: 1px;
 }
 
 #gMapAPI{

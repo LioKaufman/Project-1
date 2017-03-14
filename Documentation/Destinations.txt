@@ -2,84 +2,96 @@
 {
 	title: "Thailand",
 	picture: "img/thailand.jpg",
-	price: "600", 
-	gps: "13.75, 100.50",
+	price: 600, 
+	Latitude: 13.75,
+	Longitude: 100.50,
 	desc: "Our tours to Thailand are one of the most popular on our entire website. We'll fly you in to Bangkok where you start your trip seeing the capital city and eat amazing street food. We'll then take you on a tour through Chiang Mai in the north, and the beautiful southern island of Phuket."
 };
 {
 	title: "Egypt",
 	picture: "img/egypt.jpg",
-	price: "400",
-	gps: "30.04, 31.24",
+	price: 400,
+	Latitude: 30.04,
+	Longitude: 31.24,
 	desc: "Our pacakge to Egypt is an unforgettable experience. From seeing the timeless pyraminds of Giza and the Sphinx, to a river cruise along the Nile, you will have memories to last a lifetime. We also take you for scuba diving in the Red Sea at Sharm El Sheik, and an excusrsion to Luxor in the south to visit the Valley of the Kings."
 };
 {
 	title: "United States",
 	picture: "img/usa.jpg",
-	price: "800",
-	gps: "40.78, -73.97",
+	price: 800,
+	Latitude: 40.78,
+	Longitude: -73.97,
 	desc: "Our USA tour starts off in New York City, finises in Los Angeles, and has stops in Florida and Texas along the way, all by cross-country rail. There is no better way to see all the best sights America has to offer. We also take a side trip to see the Grand Canyon and Roswell, New Mexico in the Southwest."
 };
 {
 	title: "Brazil",
 	picture: "img/brazil.jpg",
-	price: "700",
-	gps: "-22.92, -43.19",
+	price: 700,
+	Latitude: -22.92,
+	Longitude: -43.19,
 	desc: "Visiting Brazil is the experience of a lifetime. Seeing the Cristo Redentor in Rio de Janeiro from a hill overlooking the entire city at sunset, is on everyone's bucket list. We also include a visit to Florianopolis in the south to visit some amazing beaches and try out your paragliding skills as well!"
 };
 {
 	title: "South Korea",
 	picture: "img/korea.jpg",
-	price: "650",
-	gps: "37.54, 126.93",
+	price: 650,
+	Latitude: 37.54,
+	Longitude: 126.93,
 	desc: "Visit South Korea for a cultural experience like no other. We start from Seoul with a full day trip to the DMZ, the most controversial border in the world, where the Korean War technically has never ended! Along the way you'll experience Soju, Korean BBQ, and the all night experience of partying in Itaewon. We finish the tour with the beautiful coastal city of Busan in the south."
 };
 {
 	title: "Australia",
 	picture: "img/australia.jpg",
-	price: "900",
-	gps: "-33.86, 151.21",
+	price: 900,
+	Latitude: -33.86,
+	Longitude: 151.21,
 	desc: "If you fancy seeing some kangaroos, snakes, and jellyfish, you'll get all of that and more, with our Australia package! We'll visit Sydney and Melbourne on this trip, see some amazing coastline, beaches, animals, and the funniest english accent you'll ever meet on this side of the equator! The Sydney Opera house is world famous and you'll have an amazing view of it while climbing to the top of the Sydney Harbor Bridge!"
 };
 {
 	title: "France",
 	picture: "img/france.jpg",
-	price: "300",
-	gps: "48.85, 2.34",
+	price: 300,
+	Latitude: 48.85,
+	Longitude: 2.34,
 	desc: "Everyone has to visit France at least once in their life! We will stop in Paris to see the Eiffel Tower, Arc de Triumph, Notre Dame, and the best croissants you'll ever eat! Then we head west to see the beaches of Normandy, the historical site from the D-Day landings of World War Two. Finally we'll head south to Bordeaux and Lyon to cap off this trip."
 };
 {
 	title: "South Africa",
 	picture: "img/southAfrica.jpg",
-	price: "500",
-	gps: "-33.92, 18.42",
+	price: 500,
+	Latitude: -33.92,
+	Longitude: 18.42,
 	desc: "We fly into Johannesburg to start the tour and spend a few days, then you'll be whisked off to Cape Town in the south, where you can see sharks, climb Table Mountain and Lion's Head, take some relaxing tours of the local vineyards, and hike to Cape Point, the southernmost point of the entire African continent!"
 };
 {
 	title: "Portugal",
 	picture: "img/portugal.jpg",
-	price: "250",
-	gps: "38.72, -9.13",
+	price: 250,
+	Latitude: 38.72,
+	Longitude: -9.13,
 	desc: "Portugal is one of Europe's best kept secrets, but we've got the inside scoop on it all! We'll visit Porto and Lisbon, the 2 biggest cities in Portugal, where you can indulge on amazing food and wine, and see all the historical sites of one of the oldest countries of Europe. We finish the tour with the pristine beaches of Faro in the south."
 };
 {
 	title: "Mexico",
 	picture: "img/mexico.jpg",
-	price: "750",
-	gps: "19.43, -99.13",
+	price: 750,
+	Latitude: 19.43,
+	Longitude: -99.13,
 	desc: "If you love tequila and tacos, our Mexico tour is just for you! This is one of the best countries in the world to satisfy your taste buds, and we'll also include some memororable sightseeing destinations as well, like the pyramids of Teotihuacan and Chichen Itza, the Jose Cuervo tequila distillery, and the party beaches of Cancun and Playa del Carmen on the Yucatan peninsula."
 };
 {
 	title: "India",
 	picture: "img/india.jpg",
-	price: "450",
-	gps: "28.70, 77.10",
+	price: 450,
+	Latitude: 28.70,
+	Longitude: 77.10,
 	desc: "We've got a full itinerary on the slate for you if you choose our India package. Mumbai, Delhi, the Taj Mahal, and amazing vegetarian food are all part of this journey. Experience a culture like none other around the world. Just watch out for elephants and cows crossing the road!"
 };
 {
 	title: "Iceland",
 	picture: "img/iceland.jpg",
-	price: "550",
-	gps: "64.12, -21.81",
+	price: 550,
+	Latitude: 64.12,
+	Longitude: -21.81,
 	desc: "Contrary to popular belief, Iceland is actually not full of ice! And in the summertime, its actually quite warm, try out the black sand beaches in the south if you're feeling adventurous! We fly in to the capital region to see Reykyjavik and meet our local guides, who will then take us on a tour of the Golden Circle, to see the waterfalls of Gullfoss, the Continental Divide, and try out fermented shark meat, a specialty amongst the locals!"
 };

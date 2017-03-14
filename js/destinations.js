@@ -99,32 +99,28 @@ var destinations = [
 
 
 for(i=0; i<destinations.length; i++) {
-  var destinationCard = "<div class='Destination col-md-4 col-sm-6 col-xs-12'> <article class='row'> <div class='col-md-4'> <h2 class='destinationTitle'>"+destinations[i].Title+"</h2> <!-- Google Destination Map API --> <div class='destinationMapAPI'></div> </div> <figure class='col-md-8'> <img class='destinationImage img-responsive' src='"+destinations[i].Picture+"' alt='Picture of "+destinations[i].Title+" Destination'> </figure> </article> <article class='row'> <p class='destinationDescription'> "+destinations[i].Desc+"</p> </article> <article class='row'> <h5 class='destinationPrice col-xs-7'> <b>Price:</b> €"+destinations[i].Price+".00 per Person</h5> <button type='button' id='btn"+destinations[i].Title+"' class='btn btn-primary col-xs-3 col-xs-offset-1'>Book Now</button> </article> </div>" 
-
-/*  
-  "<div class='contactCard'> <figure> <img class='contactImg' src='"+employees[i].Photo+"' alt='Profile Photo of "+employees[i].Name+"'> </figure> <div class='contactDetails'> <p class='contactName'>"+employees[i].Name+"</p> <p class='contactTitle'>"+employees[i].Title+"</p> <p class='contactPhone'>"+employees[i].Phone+"</p> <p class='contactEmail'>"+employees[i].Email+"</p> </div> </div>";
-*/
+  var destinationCard = "<div class='Destination col-md-4 col-sm-6 col-xs-12'> <h2 class='destinationTitle col-xs-12'>"+destinations[i].Title+"</h2> <figure class='col-xs-12'> <img class='destinationImage img-responsive' src='"+destinations[i].Picture+"' alt='Picture of "+destinations[i].Title+" Destination'> </figure> <div class='destinationDescription col-xs-12'> "+destinations[i].Desc+"</div> <article class='row'> <h5 class='destinationPrice col-xs-7'> <b>Price:</b> €"+destinations[i].Price+".00 per Person</h5> <button type='button' id='btn"+destinations[i].Title+"' class='btn btn-primary col-xs-3 col-xs-offset-1'>Book Now</button> </article> </div>" 
 
   $("#destinationCards").prepend(destinationCard);
-};
+
+};  // end for looop
 
 
-
-  // Set the Google Map API 
-/*function destinationLocation() {
-  var mapCenter = new google.maps.LatLng(13.75, 100.50);
-  var mapCanvas = document.getElementById("destinationMapAPI");
-  var mapOptions = {center: mapCenter, zoom: 4};
+   // Set the Google Map API 
+function desLocations() {
+  var mapCenter = new google.maps.LatLng(48.18971119999999, 16.33426940000004);
+  var mapCanvas = $("#destinationsMapAPI");
+  var mapOptions = {center: mapCenter, zoom: 5};
   var map = new google.maps.Map(mapCanvas, mapOptions);
- */
  
-  // initialise veriable
- /* var i=0;*/
-
-  // inseret office addresses into API info Marker
- /* while (i<destinations.length) {
-    var officeLatLng = new google.maps.LatLng(Number(destinations[i].Latitude), Number(destinations[i].Longitude));
+  
+  for(i=0; i<destinations.length; i++) {
+    var markerInfo = destinations[i].Title;
+    var desLatLng = new google.maps.LatLng(Number(destinations[i].Latitude), Number(destinations[i].Longitude));
+    var marker = new google.maps.Marker({position:desLatLng});
+    marker.setMap(map);
+    var infowindow = new google.maps.InfoWindow({content: markerInfo});
+    
     infowindow.open(map,marker);
-    i++
-  };
-};*/
+  };  // end for loop.
+};  // end function officeLocation. 

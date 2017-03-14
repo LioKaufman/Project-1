@@ -9,17 +9,17 @@
 .Destination * {
 	padding: 5px;
 	align-items: center;
-	font-size: 1em;
 }
 
 .Destination h2{
-	font-size: 1.1em;
+	font-size: 2em;
 	font-weight: 600;
 	text-align: center;
 }
 
 .destinationDescription{
-	height: 160px;
+	height: 180px;
+	font-size: 0.96em;
 }
 
 .Destination button {
@@ -28,11 +28,11 @@
 	justify-content: center;
 }
 
-.destinationMapAPI{
+ .destinationsMapAPI{
 	width:100%;
-	height:90px;
+	height:300px;
 	background-color: #bbbbbb;
-}
+} 
 
 @media (min-width: 1300px) {
 	

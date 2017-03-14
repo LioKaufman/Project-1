@@ -123,8 +123,17 @@ function showResults(score) {
     var contentElement = $("<div class='col col-xs-12'>");
     mainElement.append(contentElement);
     var heading = $("<h3>").text("Quiz Results").appendTo(contentElement);
+    $("<p>").text("You have "+globalScore+"/5 answers correct").appendTo(contentElement);
     grade.message.appendTo(contentElement);
     modalContent.html(mainElement);
+}
+function getDiscountCode() {
+    
+
+}
+
+function addDiscountCode() {
+
 }
 
 function pickRandomQuestions(questionCount) {

@@ -128,7 +128,7 @@ function showResults(score) {
     modalContent.html(mainElement);
 }
 function getDiscountCode() {
-    
+
 
 }
 

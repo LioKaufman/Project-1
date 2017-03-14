@@ -1,51 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Mount Everest Travel Agency | Contact</title>
-	<!-- Links to AJAX libraries on google -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-	<!-- Links to online Boostrap CDN  -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<!-- Links to personal CSS files -->
+    <meta charset="UTF-8">
+    <title>Mount Everest Travel Agency | Contact</title>
+    <!-- Links to AJAX libraries on google -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <!-- Links to online Boostrap CDN  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Links to personal CSS files -->
     <link rel="stylesheet" href="../css/contact.css">
 </head>
+
 <body>
-	<main class="container">
-		<section class="row">
-			<div id="contactInfo" class="col-md-7">
-				<section class="row">
-					<h2>Mount Everest Contact Details</h2>
-				</section>
-				
-				<section class="row">
-					<h4 class="col-xs-12"><b>Address:</b> Herklotzgasse 21 Wien 1150, Austria</h4>
-				</section>
-					
-				<section class="row">
-					<h4 class="col-xs-12"><b>Email:</b> office@mounteverst.agency</h4>
-				</section>
-
-				<section class="row">
-					<h4 class="col-xs-12"><b>Phone:</b> +43 650 3696776</h4>
-				</section>
-				<section class="row">
-					<!-- Google Map API -->
-					<div id="gMapAPI"></div>
-				</section>
-			</div>
-			<div id="game" class="col-md-3"></div>
-		</section>
-		<section id="paymentDetails" class="row">
-			
-		</section>
-
-	</main>
-
-	 <!-- Links to personal JavaScrip files -->
+    <main class="container">
+        <section class="row">
+            <div id="contactInfo" class="col-md-6">
+                <section class="row">
+                    <h2>Mount Everest Contact Details</h2>
+                </section>
+                <section class="row">
+                    <h4 class="col-xs-12"><b>Address:</b> Herklotzgasse 21 Wien 1150, Austria</h4>
+                </section>
+                <section class="row">
+                    <h4 class="col-xs-12"><b>Email:</b> office@mounteverst.agency</h4>
+                </section>
+                <section class="row">
+                    <h4 class="col-xs-12"><b>Phone:</b> +43 650 3696776</h4>
+                </section>
+                <section class="row">
+                    <!-- Google Map API -->
+                    <div id="gMapAPI"></div>
+                </section>
+            </div>
+            <div id="submitForm" class="col-md-6">
+                <section class="row">
+                    <h2>Contact Form</h2>
+                </section>
+                <section>
+                	<p class="col-xs-12">
+                		Feel free to fill out our contact form if you have any questions about our offers and services.
+                		<br>You can also use this form to submit a testimonial!
+                	</p>
+                </section>
+                <section class="row">
+                    <input class="col-xs-3" type="text" name="firstname" placeholder="First Name">
+                    <input class="col-xs-3 col-xs-offset" type="text" name="lastname" placeholder="Last Name">
+                </section>
+                <section class="row">
+                    <input class="col-xs-6" type="email" name="email" placeholder="Email">
+                </section>
+                <section class="row">
+                    <input class="col-xs-6" type="text" name="subject" placeholder="Subject">
+                </section>
+                <section class="row">
+                    Inquiry:
+                    <section class="row">
+                        <textarea class="col-xs-12" type="text" name="inquiry" rows="6" value="write your question in this field"></textarea>
+                    </section>
+                    <input class="col-xs-2" type="submit" value="Submit">
+                </section>
+        </section>
+        <section class="row"></section>
+        <section class="row"></section>
+        </div>
+        </section>
+    </main>
+    <!-- Links to personal JavaScrip files -->
     <script type="text/javascript" src="../js/APIscript.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQPrJInf7pkoQjHI6iQLW4y5BColVBRQA&callback=officeLocation"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQPrJInf7pkoQjHI6iQLW4y5BColVBRQA&callback=officeLocation"></script>
 </body>
+
 </html>

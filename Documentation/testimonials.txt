@@ -1,0 +1,61 @@
+
+{
+	name: "Josef",
+	offer: "India",
+	quote: "I had an awesome trip",
+};
+{
+	name: "Stefan",
+	offer: "Iceland",
+	quote: "I had an awesome trip",
+};
+{
+	name: "Maria",
+	offer: "Thailand",
+	quote: "I had an awesome trip",
+};
+{
+	name: "Eva",
+	offer: "United States",
+	quote: "I had an awesome trip",
+};
+{
+	name: "Martyna",
+	offer: "Brazil",
+	quote: "I had an awesome trip",
+};
+{
+	name: "Max",
+	offer: "Egypt",
+	quote: "I had an awesome trip",
+};
+{
+	name: "Georg",
+	offer: "South Korea",
+	quote: "I had an awesome trip",
+};
+{
+	name: "Caroline",
+	offer: "Australia",
+	quote: "I had an awesome trip",
+};
+{
+	name: "Andra",
+	offer: "France",
+	quote: "I had an awesome trip",
+};
+{
+	name: "Melissa",
+	offer: "South Africa",
+	quote: "I had an awesome trip",
+};
+{
+	name: "Sofia",
+	offer: "Portugal",
+	quote: "I had an awesome trip",
+};
+{
+	name: "Jonas",
+	offer: "Mexico",
+	quote: "I had an awesome trip",
+};

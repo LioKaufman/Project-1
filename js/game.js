@@ -2,7 +2,16 @@
  * Created by niki on 14.03.17.
  */
 
+/**
+ * The content of the Modal
+ * @type {*}
+ */
+var modalContent = $("<div class='modal-content'>");
 
+/**
+ * The array of questions for the game.
+ * @type {[*]}
+ */
 var countries = [
     {question: "In which city can you find a famous ferris wheel featured in the movie Before Sunrise?", answer: "Vienna"},
     {question: "Which city is home to the White House currently occupied by Donald Trump?", answer: "Washington D.C."},
@@ -36,9 +45,14 @@ var countries = [
     {question: "Which capital city was home to Fidel Castro?", answer: "Havana"}
 ];
 
-var modalContent = $("<div class='modal-content'>");
 
-
+/**
+ * Generate a new form for the Quiz
+ * @param country
+ * @param number
+ * @param count
+ * @constructor
+ */
 function Question(country, number, count) {
     this.country = country;
 
@@ -79,7 +93,10 @@ function Question(country, number, count) {
     }
 }
 
-
+/**
+ * Generate a 5 digit discount code
+ * @returns {string}
+ */
 function generateDiscountCode() {
     var length = 5;
     var characters = [];
@@ -90,6 +107,11 @@ function generateDiscountCode() {
     return characters.join('');
 }
 
+/**
+ * Generate grading data from a given score
+ * @param score
+ * @returns {{discountCode: {}, message: (*|jQuery|HTMLElement)}}
+ */
 function gradeResults(score) {
     var discount = 0;
     var grade = {};
@@ -117,6 +139,10 @@ function gradeResults(score) {
     return {"discountCode": grade, "message": message};
 }
 
+/**
+ * Generate the score display with a short sentence, the number of correct answers and a discount code.
+ * @param score
+ */
 function showResults(score) {
     var grade = gradeResults(score);
     var mainElement = $("<div class='row'>");
@@ -128,6 +154,12 @@ function showResults(score) {
     modalContent.html(mainElement);
 }
 
+/**
+ * Get the discount amount from local storage.
+ * @param discountCode
+ * @param codes
+ * @returns {*}
+ */
 function getDiscount(discountCode, codes) {
     var currentCodes;
 
@@ -147,13 +179,19 @@ function getDiscount(discountCode, codes) {
     }
     return selectedDiscount;
 
-
 }
-
+/**
+ * Remove all discount codes from local storage.
+ */
 function resetDiscounts() {
     localStorage.setItem("discountCodes", JSON.stringify({}));
 }
 
+/**
+ * Create and store a discount code with the given amount.
+ * @param amount
+ * @returns {string}
+ */
 function createDiscountCode(amount) {
     var currentCodes = JSON.parse(localStorage.getItem("discountCodes"));
     do  {
@@ -172,6 +210,11 @@ function createDiscountCode(amount) {
     return discountCode;
 }
 
+/**
+ * Pick an amount of random questions from countries.
+ * @param questionCount
+ * @returns {Array}
+ */
 function pickRandomQuestions(questionCount) {
     var questions = [];
     while (questions.length < questionCount) {
@@ -190,6 +233,9 @@ function pickRandomQuestions(questionCount) {
     return questions;
 }
 
+/**
+ * Main entrance point of the game, should be triggered by the start game button.
+ */
 function startGame() {
     var questions = pickRandomQuestions(5);
     var questionForms = questions.map(function (question, index) {
@@ -198,7 +244,6 @@ function startGame() {
     });
     globalScore = 0;
     var firstForm = questionForms[0];
-    //console.log(firstForm);
     for (var questionIndex = 0 ; questionIndex < questionForms.length-1 ; questionIndex++) {
         const currentForm = questionForms[questionIndex];
         const nextForm = questionForms[questionIndex+1];
@@ -218,15 +263,24 @@ function startGame() {
 }
 
 
-
+/**
+ * The button to start the game.
+ * @type {*}
+ */
 var startGameButton = $("<button type='button' class='btn btn-primary' data-toggle='modal' data-target='.game--modal'>").text(" Discount Game! ");
 startGameButton.click(function () {
     //testForm = new Question(countries[0], 1, 5);
     //testForm.show();
     startGame();
 });
-
+/**
+ * The modal where the game is displayed in.
+ * @type {*}
+ */
 var gameModal = $("<div class='modal fade game--modal' tabindex='-1' role='dialog' aria-labelledby='myLargeModalLabel'>").append($("<div class='modal-dialog modal-lg' role='document'>").append(modalContent));
 
+/**
+ * Appending the game button and the game Modal to the index.html page.
+ */
 $("#navigation").append(startGameButton);
 $("main.container").append(gameModal);

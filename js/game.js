@@ -93,7 +93,6 @@ function generateDiscountCode() {
 function gradeResults(score) {
     var discount = 0;
     var grade = {};
-    var code = generateDiscountCode();
     var message = $("<div class='game--score'>");
     switch(score) {
         case 5:
@@ -113,6 +112,7 @@ function gradeResults(score) {
             $("<p>").text("Thank you for playing!").appendTo(message);
             break;
     }
+    var code = createDiscountCode(discount);
     grade[code] = discount;
     return {"discountCode": grade, "message": message};
 }
@@ -148,6 +148,10 @@ function getDiscount(discountCode, codes) {
     return selectedDiscount;
 
 
+}
+
+function resetDiscounts() {
+    localStorage.setItem("discountCodes", JSON.stringify({}));
 }
 
 function createDiscountCode(amount) {

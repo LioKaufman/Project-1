@@ -2,7 +2,8 @@
 {
 	title: "Thailand",
 	picture: "img/thailand.jpg",
-	price: "600", gps: "13.75, 100.50",
+	price: "600", 
+	gps: "13.75, 100.50",
 	desc: "Our tours to Thailand are one of the most popular on our entire website. We'll fly you in to Bangkok where you start your trip seeing the capital city and eat amazing street food. We'll then take you on a tour through Chiang Mai in the north, and the beautiful southern island of Phuket."
 };
 {

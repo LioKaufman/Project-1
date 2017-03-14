@@ -127,13 +127,45 @@ function showResults(score) {
     grade.message.appendTo(contentElement);
     modalContent.html(mainElement);
 }
-function getDiscountCode() {
+
+function getDiscount(discountCode, codes) {
+    var currentCodes;
+
+    if (typeof code === "undefined") {
+        currentCodes = JSON.parse(localStorage.getItem("discountCodes"));
+    } else {
+        currentCodes = codes;
+    }
+
+    var selectedDiscount;
+    try {
+        selectedDiscount = currentCodes[discountCode];
+    } catch (err) {
+        if (err instanceof ReferenceError) {
+            selectedDiscount = 0;
+        }
+    }
+    return selectedDiscount;
 
 
 }
 
-function addDiscountCode() {
-
+function createDiscountCode(amount) {
+    var currentCodes = JSON.parse(localStorage.getItem("discountCodes"));
+    do  {
+        var discountCode = generateDiscountCode();
+        var currentDiscount = getDiscount(discountCode, currentCodes);
+    } while (currentDiscount == 0);
+    var newCode = {};
+    newCode[discountCode] = amount;
+    console.log(newCode);
+    if (currentCodes === null) {
+        currentCodes = {};
+    }
+    console.log(currentCodes == null);
+    Object.assign(currentCodes, newCode);
+    localStorage.setItem("discountCodes", JSON.stringify(currentCodes));
+    return discountCode;
 }
 
 function pickRandomQuestions(questionCount) {

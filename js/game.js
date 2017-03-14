@@ -60,15 +60,22 @@ function Question(country, number, count) {
     this.contentElement = $("<div class='col col-xs-12'>");
     this.mainElement.append(this.contentElement);
 
-    this.heading = $("<h3>").text("Quiz").appendTo(this.contentElement);
-    this.counter = $("<p>").text("Question "+number+" of "+count).appendTo(this.contentElement);
+    this.modalHeader = $("<div class='modal-header'>");
+    this.modalHeader.append($("<button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>"));
+    this.modalBody = $("<div class='modal-body'>");
+    this.modalFooter = $("<div class='modal-footer'>");
+
+    this.contentElement.append(this.modalHeader).append(this.modalBody).append(this.modalFooter);
+
+    this.heading = $("<h4>").text("Quiz").appendTo(this.modalHeader);
+    this.counter = $("<p>").text("Question "+number+" of "+count).appendTo(this.modalBody);
     
-    this.inputForm = $("<form>").appendTo(this.contentElement);
+    this.inputForm = $("<form>").appendTo(this.modalBody);
     this.formGroup = $("<div class='form-group'>");
     this.question = $("<label for='game--answer'>").text(country.question)
         .appendTo(this.formGroup);
     this.inputField = $("<input type='text' class='form-control' id='game--answer'>").appendTo(this.formGroup);
-    this.submitButton = $("<button type='button' class='btn btn-default'>").text("Submit").appendTo(this.formGroup);
+    this.submitButton = $("<button type='button' class='btn btn-default'>").text("Submit").appendTo(this.modalFooter);
     this.formGroup.appendTo(this.inputForm);
 
     this.setCallBack = function (callback) {
@@ -116,25 +123,24 @@ function gradeResults(score) {
     var discount = 0;
     var grade = {};
     var message = $("<div class='game--score'>");
+    var code = createDiscountCode(discount);
     switch(score) {
         case 5:
             discount = 0.1;
             $("<p>").text("Congratulations, your knowledge of the World is impressive!").appendTo(message);
             $("<p>").text("You have earned a " + (discount*100).toFixed() +"% Discount.").appendTo(message);
-            $("<p>").text("Your Discount code: " + code).appendTo(message);
-
+            $("<p class='strong'>").text("Your Discount code: " + code).appendTo(message);
             break;
         case 4:
             discount = 0.05;
             $("<p>").text("Congratulations!").appendTo(message);
             $("<p>").text("You have earned a " + (discount*100).toFixed() +"% Discount.").appendTo(message);
-            $("<p>").text("Your Discount code: " + code).appendTo(message);
+            $("<p class='strong'>").text("Your Discount code: " + code).appendTo(message);
             break;
         default:
             $("<p>").text("Thank you for playing!").appendTo(message);
             break;
     }
-    var code = createDiscountCode(discount);
     grade[code] = discount;
     return {"discountCode": grade, "message": message};
 }
@@ -147,10 +153,20 @@ function showResults(score) {
     var grade = gradeResults(score);
     var mainElement = $("<div class='row'>");
     var contentElement = $("<div class='col col-xs-12'>");
+
+
+     var modalHeader = $("<div class='modal-header'>");
+     modalHeader.append($("<button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>"));
+     var modalBody = $("<div class='modal-body'>");
+     var modalFooter = $("<div class='modal-footer'>");
+    contentElement.append(modalHeader).append(modalBody).append(modalFooter);
+
+
     mainElement.append(contentElement);
-    var heading = $("<h3>").text("Quiz Results").appendTo(contentElement);
-    $("<p>").text("You have "+globalScore+"/5 answers correct").appendTo(contentElement);
-    grade.message.appendTo(contentElement);
+
+    var heading = $("<h4>").text("Quiz Results").appendTo(modalHeader);
+    $("<p>").text("You have "+globalScore+"/5 answers correct").appendTo(modalBody);
+    grade.message.appendTo(modalBody);
     modalContent.html(mainElement);
 }
 
@@ -278,6 +294,9 @@ startGameButton.click(function () {
  * @type {*}
  */
 var gameModal = $("<div class='modal fade game--modal' tabindex='-1' role='dialog' aria-labelledby='myLargeModalLabel'>").append($("<div class='modal-dialog modal-lg' role='document'>").append(modalContent));
+
+
+
 
 /**
  * Appending the game button and the game Modal to the index.html page.

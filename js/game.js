@@ -45,3 +45,5 @@ var gameModal = $("<div class='modal fade game--modal' tabindex='-1' role='dialo
 
 var startGameButton = $("<button type='button' class='btn btn-primary' data-toggle='modal' data-target='.game--modal'>").text(" Discount Game! ");
 
+$("#navigation").append(startGameButton);
+$("main .container").append(gameModal);

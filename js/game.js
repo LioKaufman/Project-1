@@ -80,6 +80,53 @@ function Question(country, number, count) {
 }
 
 
+function generateDiscountCode() {
+    var length = 5;
+    var characters = [];
+    for (var i=0; i<length; i++) {
+        var character = (Math.floor(Math.random() * 36)).toString(36);
+        characters.push(character);
+    }
+    return characters.join('');
+}
+
+function gradeResults(score) {
+    var discount = 0;
+    var grade = {};
+    var code = generateDiscountCode();
+    var message = $("<div class='game--score'>");
+    switch(score) {
+        case 5:
+            discount = 0.1;
+            $("<p>").text("Congratulations, your knowledge of the World is impressive!").appendTo(message);
+            $("<p>").text("You have earned a " + (discount*100).toFixed() +"% Discount.").appendTo(message);
+            $("<p>").text("Your Discount code: " + code).appendTo(message);
+
+            break;
+        case 4:
+            discount = 0.05;
+            $("<p>").text("Congratulations!").appendTo(message);
+            $("<p>").text("You have earned a " + (discount*100).toFixed() +"% Discount.").appendTo(message);
+            $("<p>").text("Your Discount code: " + code).appendTo(message);
+            break;
+        default:
+            $("<p>").text("Thank you for playing!").appendTo(message);
+            break;
+    }
+    grade[code] = discount;
+    return {"discountCode": grade, "message": message};
+}
+
+function showResults(score) {
+    var grade = gradeResults(score);
+    var mainElement = $("<div class='row'>");
+    var contentElement = $("<div class='col col-xs-12'>");
+    mainElement.append(contentElement);
+    var heading = $("<h3>").text("Quiz Results").appendTo(contentElement);
+    grade.message.appendTo(contentElement);
+    modalContent.html(mainElement);
+}
+
 function pickRandomQuestions(questionCount) {
     var questions = [];
     while (questions.length < questionCount) {
@@ -104,7 +151,7 @@ function startGame() {
         return new Question(question, index + 1, questions.length);
 
     });
-    var score = 0;
+    globalScore = 0;
     var firstForm = questionForms[0];
     //console.log(firstForm);
     for (var questionIndex = 0 ; questionIndex < questionForms.length-1 ; questionIndex++) {
@@ -113,11 +160,15 @@ function startGame() {
         console.log(questionIndex);
         currentForm.submitButton.click(function () {
             console.log('click!');
-            score += currentForm.scoreAnswer();
+            console.log(globalScore);
+            globalScore += currentForm.scoreAnswer();
             nextForm.show();
         })
     }
     firstForm.show();
+    questionForms.pop().submitButton.click(function () {
+        showResults(globalScore);
+    });
 
 }
 

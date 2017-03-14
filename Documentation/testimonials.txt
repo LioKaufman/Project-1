@@ -52,10 +52,10 @@
 {
 	name: "Sofia",
 	offer: "Portugal",
-	quote: "I had an awesome trip",
+	quote: "I ate the biggest sandwich of my life in Porto, it's called Francesinha! It's covered in sauce and so messy, but I was so full and satisfied afterwards! I learned so much about all the famous world explorers from Portugal, I want to be Magellan someday and circle the world by sea!",
 };
 {
 	name: "Jonas",
 	offer: "Mexico",
-	quote: "I had an awesome trip",
+	quote: "Never in my life will I eat so many tacos and drink so many shots of Tequila ever again. But I don't regret it one bit, trip of a lifetime!",
 };

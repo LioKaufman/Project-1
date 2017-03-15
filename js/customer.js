@@ -7,7 +7,6 @@ $(window).on("load", function () {
    var restoredData = getCustomerData();
     $("#bookingFirstName").val(restoredData.firstName);
     $("#bookingLastName").val(restoredData.lastName);
-    console.log("*");
 });
 
 
@@ -36,7 +35,7 @@ function getBookingInfo() {
 }
 
 function validateBooking(bookingData) {
-    // TODO: implement validation
+
 }
 
 $("#bookingSubmibtn").click(function () {

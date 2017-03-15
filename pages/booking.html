@@ -32,14 +32,11 @@
 					<input id="bookingFirstName" class="input-lg col-xs-5" type="text" name="firstName" placeholder="First Name">
 					<input id="bookingLastName" class="input-lg col-xs-5 col-xs-offset-2" type="text" name="lastName" placeholder="Surname">
 				</section>
-					
 
 				<section class="row input-group">
 					<span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-send"></i></span>
 					<input id="bookingEmail" class="input-lg col-xs-12" type="email" name="eMail" placeholder="Email Address">
 				</section>
-
-
 
 				<section class="row">
 					<input id="bookingPassengers" class="input-lg col-xs-3" type="number" name="passengers" min="1" max="10" step="1" placeholder="No. of people">
@@ -53,7 +50,7 @@
 				<section class="row input-group">
 					<span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-tag"></i></span>
 					<input id="bookingPromoCode" class="input-lg col-md-7" type="text" name="promoCode" placeholder="Promotion Code:">
-					<button id="packageSubmitBtn" class="Submibtn btn btn-primary col-md-3 col-md-offset-2" type="button">Select Package</button>
+					<button id="packageSubmitBtn" class="Submibtn btn btn-primary col-md-3 col-md-offset-2" type="button" data-toggle='modal' data-target='#paymentDetails'>Select Package</button>
 				</section>
 			</div>
 			<div id="game" class="bookingForm col-md-3">
@@ -64,42 +61,17 @@
 				<img id="gameIcon" src="../img/icons/game.png" alt="game">
 			</a>
 
-
-
-
-
-			
-
-
-
 			</div>
 		</section>
 
-		<section id="paymentDetails" class="row">
-			<div class="bookingForm col-md-12">
-				<section class="row">
-					<h3>Payment Details</h3>
-				</section>
-				
-				<section class="row">
-					<input id="paymentIBAN" class="input-lg col-xs-5" type="text" name="IBAN" placeholder="IBAN Code">
-					<input id="paymentBIC" class="input-lg col-xs-5 col-xs-offset-2" type="text" name="BIC" placeholder="BIC Code">
-				</section>
-					
-				<section class="row">
-					<div id="totalPrice" class="input-lg col-xs-5"></div>
-
-					<button id="bookingSubmitBtn" class="Submibtn btn btn-primary col-md-3 col-md-offset-4" type="button">Book Destination</button>
-				</section>
-			
-			</div>
-
+		<section id="paymentDetails" class="row modal fade">
 		</section>
 
 	</main>
 
 	 <!-- Links to personal JavaScrip files -->
     <script type="text/javascript" src="../js/booking.js"></script>
+    <script type="text/javascript" src="../js/payment.js"></script>
 	<script type="text/javascript" src="../js/game.js"></script>
 </body>
 </html>

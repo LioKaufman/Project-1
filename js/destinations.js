@@ -138,13 +138,12 @@ for(i=0; i<destinations.length; i++) {
 };  // end for looop
 
 
-   // Set the Google Map API 
+// Set the Google Map API
 function desLocations() {
   var mapCenter = new google.maps.LatLng(48.18971119999999, 16.33426940000004);
   var mapCanvas = $("#destinationsMapAPI");
   var mapOptions = {center: mapCenter, zoom: 5};
   var map = new google.maps.Map(mapCanvas, mapOptions);
- 
   
   for(i=0; i<destinations.length; i++) {
     var markerInfo = destinations[i].Title;

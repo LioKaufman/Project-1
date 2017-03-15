@@ -75,7 +75,7 @@ function Question(country, number, count) {
     this.question = $("<label for='game--answer'>").text(country.question)
         .appendTo(this.formGroup);
     this.inputField = $("<input type='text' class='form-control' id='game--answer'>").appendTo(this.formGroup);
-    this.submitButton = $("<button type='button' class='btn btn-default'>").text("Submit").appendTo(this.modalFooter);
+    this.submitButton = $("<button type='button' class='btn btn-primary'>").text("Submit").appendTo(this.modalFooter);
     this.formGroup.appendTo(this.inputForm);
 
     this.setCallBack = function (callback) {

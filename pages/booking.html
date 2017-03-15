@@ -10,15 +10,20 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<!-- Links to personal CSS files -->
-    <link rel="stylesheet" href="../css/form.css">
+    <link rel="stylesheet" href="../css/booking.css">
 </head>
 <body>
 	<main class="container">
-		<section id="package" class="row">
-			
+		<section id="package" class="bookingForm row">
+			<figure id="packagePicture" class="col-xs-6">
+				
+			</figure>
+			<div id="packageMapAPI" class="col-xs-6">
+				
+			</div>
 		</section>
 		<section class="row">
-			<div id="bookingForm" class="col-md-9">
+			<div class="bookingForm col-md-9">
 				<section class="row">
 					<h3>Booking Details</h3>
 				</section>
@@ -39,13 +44,13 @@
 				</section>
 				<section class="row">
 					<input id="bookingPromoCode" class="input-lg col-md-7" type="text" name="promoCode" placeholder="Promotion Code:">
-					<button id="bookingSubmibtn" class="Submibtn btn btn-primary col-md-3 col-md-offset-2" type="button">Select Package</button>
+					<button id="packageSubmitBtn" class="Submibtn btn btn-primary col-md-3 col-md-offset-2" type="button">Select Package</button>
 				</section>
 			</div>
-			<div id="game" class="col-md-3"></div>
+			<div id="game" class="bookingForm col-md-3"></div>
 		</section>
 		<section id="paymentDetails" class="row">
-			<div id="bookingForm" class="col-md-9">
+			<div class="bookingForm col-md-12">
 				<section class="row">
 					<h3>Payment Details</h3>
 				</section>
@@ -58,7 +63,7 @@
 				<section class="row">
 					<div id="totalPrice" class="input-lg col-xs-5"></div>
 
-					<button id="bookingSubmibtn" class="Submibtn btn btn-primary col-md-3 col-md-offset-4" type="button">Book Destination</button>
+					<button id="bookingSubmitBtn" class="Submibtn btn btn-primary col-md-3 col-md-offset-4" type="button">Book Destination</button>
 				</section>
 			</div>
 			<div id="game" class="col-md-3"></div>
@@ -67,7 +72,7 @@
 	</main>
 
 	 <!-- Links to personal JavaScrip files -->
-    <script type="text/javascript" src="../js/script.js"></script>
+    <script type="text/javascript" src="../js/booking.js"></script>
 	<script type="text/javascript" src="../js/game.js"></script>
 </body>
 </html>

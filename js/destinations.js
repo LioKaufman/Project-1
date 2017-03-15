@@ -111,7 +111,7 @@ var destinations = [
 
 var offers = [
   {Title: "Thailand", MinNights: 4, Discount: 0.1},
-  {Title: "Egypt", Title: MinNights: 4, Discount: 0.1},
+  {Title: "Egypt", MinNights: 4, Discount: 0.1},
   {Title: "United States", MinNights: 4, Discount: 0.1},
   {Title: "Brazil", MinNights: 4, Discount: 0.1},
   {Title: "South Korea", MinNights: 4, Discount: 0.1}
@@ -119,11 +119,22 @@ var offers = [
 
 
 for(i=0; i<destinations.length; i++) {
-  var price = destinations[i].Price+destinations[i].BaseRate;
+  var price = Number(destinations[i].Extra+destinations[i].BaseRate);
   var destinationCard = "<div class='Destination col-md-4 col-sm-6 col-xs-12'> <h2 class='destinationTitle col-xs-12'>"+destinations[i].Title+"</h2> <figure class='col-xs-12'> <img class='destinationImage img-responsive' src='"+destinations[i].Picture+"' alt='Picture of "+destinations[i].Title+" Destination'> </figure> <div class='destinationDescription col-xs-12'> "+destinations[i].Desc+"</div> <article class='row'> <h5 class='destinationPrice col-xs-7'> <b>Price:</b> €"+price+".00 per Person</h5> <button type='button' id='btn"+destinations[i].Title+"' class='btn btn-primary col-xs-3 col-xs-offset-1'>Book Now</button> </article> </div>" 
 
   $("#destinationCards").prepend(destinationCard);
 
+    console.log(destinations[i]);
+
+  $("#btn"+destinations[i].Title).click(function(){
+    var packageSelected = JSON.stringify(destinations[i].Title, destinations[i].Picture);
+    localStorage.setItem("destination", packageSelected);
+
+    console.log(packageSelected);
+    console.log(destinations[i]);
+
+    // window.open("booking.html");
+  });
 };  // end for looop
 
 
@@ -145,3 +156,4 @@ function desLocations() {
     infowindow.open(map,marker);
   };  // end for loop.
 };  // end function officeLocation. 
+

@@ -124,16 +124,16 @@ for(i=0; i<destinations.length; i++) {
 
   $("#destinationCards").prepend(destinationCard);
 
-    console.log(destinations[i]);
-
+    //console.log(destinations[i].Title);
+    const currentDestination = destinations[i];
   $("#btn"+destinations[i].Title).click(function(){
-    var packageSelected = JSON.stringify(destinations[i].Title, destinations[i].Picture);
+    console.log(currentDestination);
+    var packageSelected = JSON.stringify(currentDestination);
     localStorage.setItem("destination", packageSelected);
 
-    console.log(packageSelected);
-    console.log(destinations[i]);
 
-    // window.open("booking.html");
+
+    window.open("booking.html");
   });
 };  // end for looop
 

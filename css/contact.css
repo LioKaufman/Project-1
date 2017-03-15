@@ -1,4 +1,4 @@
-#contactInfo, #submitForm {
+.contactInfo {
 	padding: 5px 35px;
 	border: 3px solid;
 	border-color: lightgray;
@@ -7,37 +7,27 @@
 	height: 650px;
 }
 
-#contactInfo * {
+.contactInfo * {
 	padding: 3px;
 	align-items: center;
+	font-size: 1.14em;
 }
-#submitForm * {
-	padding: 3px;
-	align-items: center;
 
-}
-#contactSubmitBtn {
+
+.Submibtn {
 	padding: 5px;
-	border: 1px solid;
 	font-size: 1.2em;
-	margin: 5px;
-}
- #contactFormItems  {
- 	padding: 3px;
- 	font-size: 1.2em;
- 	
- }
-
-#contactInfo h2, #submitForm h2 {
-	font-size: 1.6em;
+	box-shadow: 5px 5px 9px 1px rgba(84,84,84,0.57);
 	font-weight: 600;
-	
+	justify-content: center;
 }
 
-
+.contactInfo h2 {
+	font-size: 2em;
+	font-weight: 600;	
 }
 
-#contactInfo h4 {
+.contactInfo h4 {
 	font-size: 1.4em;
 	margin: 1px;
 	padding: 1px;

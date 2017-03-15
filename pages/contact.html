@@ -17,7 +17,7 @@
 <body>
     <main class="container">
         <section class="row">
-            <div id="contactInfo" class="col-md-6">
+            <div class="contactInfo col-md-6">
                 <section class="row">
                     <h2>Mount Everest Contact Details</h2>
                 </section>
@@ -35,30 +35,31 @@
                     <div id="gMapAPI"></div>
                 </section>
             </div>
-            <div id="submitForm" class="col-md-6">
+            <div class="contactInfo col-md-6">
                 <section class="row">
                     <h2>Contact Form</h2>
                 </section>
                 <section>
                 	<h4 class="col-xs-12">
-                		Feel free to fill out our contact form if you have any questions about our offers and services.
-                		<br>You can also use this form to submit a testimonial!
+                		<h4>Feel free to fill out our contact form if you have any questions about our offers and services.</h4>
+                		<br>
+                        <h4>You can also use this form to submit a testimonial!</h4>
                 	</h4>
                 </section>
                 <section class="row">
-                    <input id="contactFormItems" class="col-xs-4" type="text" name="firstname" placeholder="First Name">
-                    <input  id="contactFormItems" class="col-xs-4 col-xs-offset" type="text" name="lastname" placeholder="Last Name">
+                    <input id="formFirstName" class="col-xs-5 input-lg" type="text" name="Firstname" placeholder="First Name">
+                    <input  id="formSurname" class="col-xs-5 col-xs-offset-2 input-lg" type="text" name="Surname" placeholder="Last Name">
                 </section>
                 <section class="row">
-                    <input  id="contactFormItems" class="col-xs-8" type="email" name="email" placeholder="Email">
+                    <input  id="formEmail" class="col-xs-12 input-lg" type="email" name="email" placeholder="Email">
                 </section>
                 <section class="row">
-                    <input  id="contactFormItems" class="col-xs-12" type="text" name="subject" placeholder="Subject">
+                    <input  id="formTopic" class="col-xs-12 input-lg" type="text" name="subject" placeholder="Subject">
                 </section>
                 <section class="row">
                     
                     <section class="row">
-                        <textarea  id="contactFormItems" class="col-xs-12" type="text" name="inquiry" rows="8" placeholder="write your question in this field"></textarea>
+                        <textarea  id="formComment" class="col-xs-12 input-lg" type="text" name="inquiry" rows="8" placeholder="write your question in this field"></textarea>
                     </section>
                     <button id="contactSubmitBtn" class="btn col-xs-2" type="button">Submit</button>
                 </section>

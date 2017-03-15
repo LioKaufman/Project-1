@@ -289,13 +289,13 @@ startGameButton.click(function () {
     //testForm.show();
     startGame();
 });
+
+
 /**
  * The modal where the game is displayed in.
  * @type {*}
  */
 var gameModal = $("<div class='modal fade game--modal' tabindex='-1' role='dialog' aria-labelledby='myLargeModalLabel'>").append($("<div class='modal-dialog modal-lg' role='document'>").append(modalContent));
-
-
 
 
 /**

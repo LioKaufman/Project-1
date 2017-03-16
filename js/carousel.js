@@ -158,18 +158,17 @@ function testimonialPane(testimonial) {
 
     var name = testimonial.Name;
     var destination = testimonial.Destination;
-    var paragraph = testimonial.Quote;
-    if ( removeDotsFromImageURL === true ) {
-        imageURL = imageURL.substring(3);
-    }
+    var quote = testimonial.Quote;
     var element = $('<div class="item">');
-    var image = $('<img>').attr('src', imageURL).attr('alt', imageAlt);
-    var caption = $('<div class="carousel-caption">');
-    var link = $('<a>').attr('href', linkURL);
-    $('<h1>').text(name).appendTo(link);
-    $('<p>').text(paragraph).appendTo(link);
-    caption.append(link);
-    element.append(image).append(caption);
+    var caption = $('<div class="testimonial">');
+    $('<h3 class="testimonialDestination">').text(destination).appendTo(caption);
+    var quoteDiv = $("<div class='testimonialDiv'>").appendTo(caption);
+    var paragraph = $('<p class="testimonialText">').text(quote).appendTo(quoteDiv);
+    quoteDiv.prepend($('<span class="testimonialQuotes">').html('&#x0201C'));
+    quoteDiv.append($('<span class="testimonialQuotes">').html('&#x0201D'));
+
+    $('<p class="testimonialName text-right">').text(name).appendTo(caption);
+    caption.appendTo(element);
     return element;
 
 }
@@ -179,6 +178,6 @@ mainCarouselTestimonials.addControl('prev');
 mainCarouselTestimonials.addControl('next');
 testimonials.map(function (testimonial) {
     //console.log(testimonial);
-    mainCarouselTestimonials.addItem(offerPane(offer, 'pages/booking.html', true));
+    mainCarouselTestimonials.addItem(testimonialPane(testimonial));
 });
 

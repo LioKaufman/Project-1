@@ -2,29 +2,45 @@
 
     margin: auto;
 }
-
-.carousel {
-	margin: 2px 1px;
-}
-
-.carousel h1 {
+h1 {
     font-size: 3em;
 }
-.carousel p {
+p {
     font-size: 1.3em;
 }
-.carousel a {
+a {
     color: white;
 }
-.carousel a:hover {
+a:hover {
     color: white;
     font-size: 1.1em;
 }
-.jumbotron {
-	height: 400px;
-	padding: 10px, 60px, 48px, 60px;
-	margin: 0px 15px 2px 15px;
+
+#mainCarouselTestimonials {
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
 }
-.jumbotron h2 {
-	margin: 2px, 0px, 10px, 0px;
+
+#mainCarouselTestimonials > * {
+
+}
+
+.testimonial {
+    padding:  0px 120px;
+}
+
+.testimonialText {
+    font-size: 2em;
+    font-style: italic;
+    display: inline-block;
+}
+
+.testimonialQuotes {
+    font-size: 2em;
+    font-style: italic;
+}
+.testimonialName {
+
 }

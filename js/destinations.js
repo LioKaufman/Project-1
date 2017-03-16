@@ -129,7 +129,7 @@ var offers = [
   {Title: "South Korea", MinNights: 6, Discount: 0.18, Picture: "../img/locations/korea.jpg"}
 ];
 
-
+// genarate the destination cards. 
 for(i=0; i<destinations.length; i++) {
   var price = Number(destinations[i].Extra+destinations[i].BaseRate);
   var destinationCard = "<div class='Destination col-md-4 col-sm-6 col-xs-12'> <h2 class='destinationTitle col-xs-12'>"+destinations[i].Title+"</h2> <figure class='col-xs-12'> <img class='destinationImage img-responsive' src='"+destinations[i].Picture+"' alt='Picture of "+destinations[i].Title+" Destination'> </figure> <div class='destinationDescription col-xs-12'> "+destinations[i].Desc+"</div> <article class='row'> <h5 class='destinationPrice col-xs-7'> <b>Price:</b> €"+price+".00 per Person</h5> <button type='button' id='btn"+destinations[i].Title+"' class='btn btn-primary col-xs-3 col-xs-offset-1'>Book Now</button> </article> </div>" 
@@ -138,16 +138,16 @@ for(i=0; i<destinations.length; i++) {
 
     //console.log(destinations[i].Title);
     const currentDestination = destinations[i];
+  // store the data into Local Storage
   $("#btn"+destinations[i].Title).click(function(){
     console.log(currentDestination);
     var packageSelected = JSON.stringify(currentDestination);
     localStorage.setItem("destination", packageSelected);
 
-
-
+    // link to booking page
     window.open("booking.html");
   });
-};  // end for looop
+};  // end for looop to genarate the destination cards.
 
 
  var offices = [

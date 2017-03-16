@@ -29,12 +29,13 @@ $("#packageSubmitBtn").click(function(){
 });  // end function payment div in modal page.
 
 
-/*
-    If customer's first name starts with C, L, H, I, G  they should immediately get
-    discount of 20% and they can combine this discount with game discount.
-    @param firstName
-    @param discountCode
-*/
+// function to collect all the booking and personal data and store it in local storage.
+function getBookingData() {
+
+};  // end function getBookingData. 
+
+
+// function to add 20% discount if customer's first name starts with 'C', 'L', 'H', 'I', or 'G'. 
 function calculateDiscount(firstName, discountCode) {
     var discount = 0;
 
@@ -54,3 +55,10 @@ function calculateDiscount(firstName, discountCode) {
 
     return discount;
 }
+
+// function to claculate the final price, including discounts, of the selected package. 
+Function clacPrice() {
+	 var selectedPackage = JSON.parse(localStorage.getItem("destination"));
+
+
+};  // end function clacPrice.

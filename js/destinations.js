@@ -136,8 +136,9 @@ for(i=0; i<destinations.length; i++) {
 
   $("#destinationCards").prepend(destinationCard);
 
-    //console.log(destinations[i].Title);
-    const currentDestination = destinations[i];
+  //console.log(destinations[i].Title);
+  const currentDestination = destinations[i];
+  
   // store the data into Local Storage
   $("#btn"+destinations[i].Title).click(function(){
     console.log(currentDestination);
@@ -146,7 +147,7 @@ for(i=0; i<destinations.length; i++) {
 
     // link to booking page
     window.open("booking.html");
-  });
+  });  // end function to store data
 };  // end for looop to genarate the destination cards.
 
 

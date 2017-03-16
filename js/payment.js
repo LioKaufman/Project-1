@@ -1,6 +1,44 @@
+// Main function to run on submittion of bookign data
+$("#packageSubmitBtn").click(function(){
+	getBookingInfo();
+	calcPrice();
+	showPaymentForm();
+}); // end main function.
+
+
+// function to collect all the booking and personal data and store it in local storage.
+function getBookingInfo() {
+    var bookingData = {};
+    bookingData.firstName = $("#bookingFirstName").val();
+    bookingData.lastName = $("#bookingLastName").val();
+    bookingData.email = $("#bookingEmail").val();
+    bookingData.passengers = $("#bookingPassengers").val();
+    bookingData.date = $("#date").val();
+    bookingData.nights = $("#bookingNights").val();
+    bookingData.promoCode = $("#bookingPromoCode").val();
+
+    console.log(bookingData);
+    customerData = JSON.stringify(bookingData);
+    console.log(customerData);
+    localStorage.setItem("Customer", bookingData);
+    return bookingData;
+};  // end function getBookingData. 
+
+
+// function to claculate the final price, including discounts, of the selected package. 
+function calcPrice() {
+	 var selectedPackage = JSON.parse(localStorage.getItem("destination"));
+	 var customerInfo = JSON.parse(localStorage.getItem("customerData"));
+
+	 var PriceQuote = selectedPackage.
+
+
+	 return PriceQuote;
+
+};  // end function clacPrice.
 
 // Calls the payment request form in a Modal page on click of package selection button.
-$("#packageSubmitBtn").click(function(){
+function showPaymentForm() {
 
 	// Constract the payment div elements
 	var paymentCard = $("<div class='bookingForm col-xs-8 col-xs-offset-2 modal-content'>");
@@ -21,18 +59,10 @@ $("#packageSubmitBtn").click(function(){
 	// display content
 	$("#paymentDetails").html(paymentCard);
 
-	console.log(firstSection);
-	console.log(secondSection);
-	console.log(thirdSection);
-	console.log(paymentCard);
-
-});  // end function payment div in modal page.
+};  // end function payment div in modal page.
 
 
-// function to collect all the booking and personal data and store it in local storage.
-function getBookingData() {
 
-};  // end function getBookingData. 
 
 
 // function to add 20% discount if customer's first name starts with 'C', 'L', 'H', 'I', or 'G'. 
@@ -56,9 +86,3 @@ function calculateDiscount(firstName, discountCode) {
     return discount;
 }
 
-// function to claculate the final price, including discounts, of the selected package. 
-Function clacPrice() {
-	 var selectedPackage = JSON.parse(localStorage.getItem("destination"));
-
-
-};  // end function clacPrice.

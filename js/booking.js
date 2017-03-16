@@ -11,26 +11,25 @@ function showPackage() {
    $("#packagePicture").append(packageImg);
 }; // End of function showPackage.
 
-
 showPackage();
 
  
-   // Set the Google Map API 
-   function destinationMapAPI() {
+// Set the Google Map API 
+function destinationMapAPI() {
        // get info from local storage
-      var selectedPackage = JSON.parse(localStorage.getItem("destination"));
+   var selectedPackage = JSON.parse(localStorage.getItem("destination"));
 
-      var mapCenter = new google.maps.LatLng(selectedPackage.Latitude, selectedPackage.Longitude);
-      var mapCanvas = document.getElementById("packageMapAPI");
-      var mapOptions = {center: mapCenter, zoom: 11};
-      var map = new google.maps.Map(mapCanvas, mapOptions);
+   var mapCenter = new google.maps.LatLng(selectedPackage.Latitude, selectedPackage.Longitude);
+   var mapCanvas = document.getElementById("packageMapAPI");
+   var mapOptions = {center: mapCenter, zoom: 11};
+   var map = new google.maps.Map(mapCanvas, mapOptions);
 
-      var officeLatLng = new google.maps.LatLng(Number(selectedPackage.Latitude), Number(selectedPackage.Longitude));
-      var marker = new google.maps.Marker({position:officeLatLng});
+   var officeLatLng = new google.maps.LatLng(Number(selectedPackage.Latitude), Number(selectedPackage.Longitude));
+   var marker = new google.maps.Marker({position:officeLatLng});
 
-      marker.setMap(map);
+   marker.setMap(map);
       
-      var infowindow = new google.maps.InfoWindow({content: markerInfo});
+   var infowindow = new google.maps.InfoWindow({content: markerInfo});
     
-      infowindow.open(map,marker);
-   }; // end function show google Map API.
+   infowindow.open(map,marker);
+}; // end function show google Map API.

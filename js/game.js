@@ -213,7 +213,8 @@ function createDiscountCode(amount) {
     do  {
         var discountCode = generateDiscountCode();
         var currentDiscount = getDiscount(discountCode, currentCodes);
-    } while (currentDiscount == 0);
+        console.log('*');
+    } while ( currentCodes !== null && !(currentDiscount in currentCodes));
     var newCode = {};
     newCode[discountCode] = amount;
     console.log(newCode);

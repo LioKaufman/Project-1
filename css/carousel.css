@@ -71,6 +71,12 @@ nav.navbar {
     color: black;
 }
 
+nav {
+    padding: 10px;
+}
+body {
+    margin-top: 60px;
+}
 
 #indexGame {
     height: 480px;

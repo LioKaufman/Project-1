@@ -52,7 +52,13 @@ body {
 nav.navbar {
     color: black;
 }
+nav {
+    padding: 10px;
+}
 
+body {
+    margin-top: 60px;
+}
 
 #game {
     margin: auto;

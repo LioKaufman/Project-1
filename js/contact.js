@@ -23,5 +23,5 @@ function officeLocation() {
     
     infowindow.open(map,marker);
     i++
-  };
-};
+  };  // end of loop.
+};  // end of map API function.

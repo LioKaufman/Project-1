@@ -150,21 +150,30 @@ for(i=0; i<destinations.length; i++) {
 };  // end for looop
 
 
-// Set the Google Map API
+ var offices = [
+  {Name: 'Mount Everest Travel Agency', Address: 'Herklotzgasse 21', City: 'Wien', PostCode: '1150', Country: 'Austria', Latitude: 48.1894, Longitude: 16.3345}
+];
+
+  // Set the Google Map API 
 function desLocations() {
-  var mapCenter = new google.maps.LatLng(48.18971119999999, 16.33426940000004);
-  var mapCanvas = $("#destinationsMapAPI");
-  var mapOptions = {center: mapCenter, zoom: 5};
+  var mapCenter = new google.maps.LatLng(48.1894, 16.3345);
+  var mapCanvas = document.getElementById("destinationsMapAPI");
+  var mapOptions = {center: mapCenter, zoom: 2};
   var map = new google.maps.Map(mapCanvas, mapOptions);
-  
-  for(i=0; i<destinations.length; i++) {
+ 
+ 
+  // initialise veriable
+  var i=0;
+
+  // inseret office addresses into API info Marker
+  while (i<destinations.length) {
     var markerInfo = destinations[i].Title;
-    var desLatLng = new google.maps.LatLng(Number(destinations[i].Latitude), Number(destinations[i].Longitude));
-    var marker = new google.maps.Marker({position:desLatLng});
+    var officeLatLng = new google.maps.LatLng(Number(destinations[i].Latitude), Number(destinations[i].Longitude));
+    var marker = new google.maps.Marker({position:officeLatLng});
     marker.setMap(map);
     var infowindow = new google.maps.InfoWindow({content: markerInfo});
     
     infowindow.open(map,marker);
-  };  // end for loop.
-};  // end function officeLocation. 
-
+    i++
+  };  // end of loop.
+};  // end of map API function.

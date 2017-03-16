@@ -2,18 +2,21 @@
 
     margin: auto;
 }
-h1 {
+.carousel h1 {
     font-size: 3em;
 }
-p {
+.carousel p {
     font-size: 1.3em;
 }
-a {
+.carousel a {
     color: white;
 }
-a:hover {
+.carousel a:hover {
     color: white;
     font-size: 1.1em;
+}
+.carousel {
+    box-shadow: 5px 5px 9px 1px rgba(84, 84, 84, 0.57);
 }
 
 #mainCarouselTestimonials {
@@ -32,15 +35,55 @@ a:hover {
 }
 
 .testimonialText {
-    font-size: 2em;
+    font-size: 3em;
     font-style: italic;
     display: inline-block;
 }
 
 .testimonialQuotes {
-    font-size: 2em;
+    font-size: 5em;
     font-style: italic;
 }
 .testimonialName {
 
 }
+
+
+
+.jumbotron {
+    height: 400px;
+    padding: 10px, 60px, 48px, 60px;
+    margin: 0px 15px 2px 15px;
+    background-color: lightblue;
+    box-shadow: 5px 5px 9px 1px rgba(84, 84, 84, 0.57);
+}
+.jumbotron h2 {
+    margin: 2px, 0px, 10px, 0px;
+}
+
+
+.navbar {
+    background-color: lightblue;
+    color: black;
+    box-shadow: 5px 5px 9px 1px rgba(84, 84, 84, 0.57);
+}
+nav.navbar {
+    color: black;
+}
+
+
+#indexGame {
+    height: 480px;
+    padding: 1px, 0px, 1px, 0px;
+    margin: 0px;
+}
+#indexGame h3 {
+    margin: 1px;
+}
+.slide {
+    background-color: lightblue;
+}
+
+
+
+

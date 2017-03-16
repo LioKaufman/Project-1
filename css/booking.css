@@ -43,27 +43,44 @@ body {
     padding-top: 8px;
 }
 
+
+.navbar {
+    background-color: lightblue;
+    color: black;
+    box-shadow: 5px 5px 9px 1px rgba(84, 84, 84, 0.57);
+}
+nav.navbar {
+    color: black;
+}
+
+
 #game {
     margin: auto;
     justify-content: center;
+    align-items: center;
     height: 370px;
+    background-color: lightblue;
+    box-shadow: 5px 5px 9px 1px rgba(84, 84, 84, 0.57);
 
 }
 
 #game :hover {
     color: white;
-    box-shadow: 5px 5px 5px 1px rgba(84, 84, 84, 0.57) inset;
+    /*box-shadow: 5px 5px 5px 1px rgba(84, 84, 84, 0.57) inset;*/
 }
 
-#game h2 {
+#game h3 {
     font-size: 1.2em;
     margin: auto;
     text-align: center;
+    padding: 5px;
 }
 
 #game img {
     max-width: 100%;
     margin: auto;
+    align-content: center;
+    padding: 15px;
     /*box-shadow: 5px 5px 9px 1px rgba(84, 84, 84, 0.57);*/
 }
 

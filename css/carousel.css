@@ -79,6 +79,7 @@ nav.navbar {
 }
 #indexGame h3 {
     margin: 1px;
+    padding: 10px;
 }
 .slide {
     background-color: lightblue;

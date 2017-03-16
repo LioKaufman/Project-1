@@ -1,3 +1,6 @@
+var bookingForm = $("#customerInfoForm");
+
+
 
 // function gets the spesific details of the booking from local storage and displies picture 
 function showPackage() {
@@ -36,3 +39,11 @@ function destinationMapAPI() {
     
    // infowindow.open(map,marker);
 }; // end function show google Map API.
+
+$(window).on("load", function () {
+    var restoredData = JSON.parse(localStorage.getItem("customerData"));
+    console.log($("#bookingFirstName"));
+    $("#bookingFirstName").val(restoredData.firstName);
+    $("#bookingLastName").val(restoredData.lastName);
+    $("#bookingEmail").val(restoredData.email);
+});

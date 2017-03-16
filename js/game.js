@@ -315,7 +315,3 @@ $("#game").append(GameButton());
 
 $(".container").append(gameModal);
 
-$("#logoutButton").click(function (element) {
-    element.preventDefault();
-    localStorage.clear();
-});

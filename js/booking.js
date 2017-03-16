@@ -6,6 +6,9 @@ function showPackage() {
 
    // set picture from local storage as variable
    var packageImg = $("<img>").attr("src", selectedPackage.Picture);
+   if ("Nights" in selectedPackage) {
+       $("#bookingNights").val(selectedPackage.Nights).prop("disabled", true);
+   }
 
    // displys picture of selected locaiton
    $("#packagePicture").append(packageImg);

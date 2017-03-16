@@ -121,7 +121,7 @@ function offerPane(offer, linkURL, removeDotsFromImageURL) {
     console.log(offer.Picture);
     var imageAlt = "picture of "+offer.Title;
     var title = offer.Title;
-    var paragraph = (offer.Discount*100).toFixed()+"% off for "+offer.MinNights+"+ Nights.";
+    var paragraph = (offer.Discount*100).toFixed()+"% off for "+offer.MinNights+" Nights.";
     if ( removeDotsFromImageURL === true ) {
         imageURL = imageURL.substring(3);
     }
@@ -133,6 +133,18 @@ function offerPane(offer, linkURL, removeDotsFromImageURL) {
     $('<p>').text(paragraph).appendTo(link);
     caption.append(link);
     element.append(image).append(caption);
+    link.click(function () {
+        var correspondingDestination = {};
+        destinations.map(function (destination) {
+            if (destination.Title == offer.Title) {
+                correspondingDestination = destination;
+            }
+        });
+        correspondingDestination.Nights = offer.MinNights;
+        correspondingDestination.Discount = offer.Discount;
+        localStorage.setItem('destination', JSON.stringify(correspondingDestination));
+
+    });
     return element;
 
 }

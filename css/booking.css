@@ -1,4 +1,4 @@
-            body {
+body {
     margin: auto;
 }
 
@@ -30,15 +30,24 @@
     justify-content: center;
 }
 
+#packagePicture {
+    text-align: center;
+}
+
+#packageMapAPI {
+    height: 400px;
+}
+
+#mapFrame {
+    padding-top: 8px;
+}
+
 #game {
     margin: auto;
     justify-content: center;
     height: 370px;
 
 }
-
-
-
 
 #game :hover {
     color: white;
@@ -49,7 +58,6 @@
     font-size: 1.2em;
     margin: auto;
     text-align: center;
-
 }
 
 #game img {
@@ -59,5 +67,7 @@
 }
 
 @media (min-width: 1300px) {
-    @media (min-width: 900px) and (max-width: 1299px) {
-        @media (max-width: 899px) {
+
+@media (min-width: 900px) and (max-width: 1299px) {
+
+@media (max-width: 899px) {

@@ -305,7 +305,7 @@ var gameModal = $("<div class='modal fade game--modal' tabindex='-1' role='dialo
 /**
  * Appending the game button and the game Modal to the index.html page.
  */
-$(".navbar .navbar-nav:first").append($('<li>').append(GameButton()));
+$(".navbar .navbar-nav:first").append($('<li>').append($("<div id='navBarGameButton'>").append(GameButton())));
 
 $("#indexGame").append(GameButton());
 $("#game").append(GameButton());

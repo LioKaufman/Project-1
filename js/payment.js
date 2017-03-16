@@ -20,10 +20,7 @@ function getBookingInfo() {
     bookingData.nights = $("#bookingNights").val();
     bookingData.promoCode = $("#bookingPromoCode").val();
 
-    console.log(bookingData);
-    customerData = JSON.stringify(bookingData);
-    console.log(customerData);
-    localStorage.setItem("Customer", bookingData);
+    localStorage.setItem("customerData", JSON.stringify(bookingData));
     return bookingData;
 };  // end function getBookingData. 
 

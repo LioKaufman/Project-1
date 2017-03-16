@@ -285,7 +285,7 @@ function startGame() {
  */
 
 function GameButton() {
-    var startGameButton = $("<button type='button' class='btn btn-primary' data-toggle='modal' data-target='.game--modal'>").text(" Discount Game! ");
+    var startGameButton = $("<button type='button' class='btn btn-primary' data-toggle='modal' data-target='.game--modal'>").text(" Game ");
     startGameButton.click(function () {
         //testForm = new Question(countries[0], 1, 5);
         //testForm.show();
@@ -305,7 +305,7 @@ var gameModal = $("<div class='modal fade game--modal' tabindex='-1' role='dialo
 /**
  * Appending the game button and the game Modal to the index.html page.
  */
-$(".navbar .navbar-nav:first").append($('<li>').append($("<div id='navBarGameButton'>").append(GameButton())));
+$("#gameNav").append(GameButton());
 
 $("#indexGame").append(GameButton());
 $("#game").append(GameButton());

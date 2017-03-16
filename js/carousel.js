@@ -85,6 +85,10 @@ function destinationPane(destination, linkURL, removeDotsFromImageURL) {
     $('<p>').text(paragraph).appendTo(link);
     caption.append(link);
     element.append(image).append(caption);
+    link.click(function () {
+        localStorage.setItem('destination', JSON.stringify(destination));
+
+    });
     return element;
 
 }

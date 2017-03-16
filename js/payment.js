@@ -79,7 +79,7 @@ function showPaymentForm(PriceQuote) {
 	var heading = $("<h3>").text("Payment Details");
 	var bankIBAN = $("<input id='paymentIBAN' class='input-lg col-xs-5' type='text' name='IBAN' placeholder='IBAN Code'>");
 	var banBIC =$("<input id='paymentBIC' class='input-lg col-xs-5 col-xs-offset-2' type='text' name='BIC' placeholder='BIC Code'>");
-	var Price = $("<div id='totalPrice' class='input-lg col-xs-5'>").text(PriceQuote);
+	var Price = $("<div id='totalPrice' class='input-lg col-xs-5'>").text("Package Price: €"+PriceQuote);
 	var Button = $("<button id='bookingSubmitBtn' class='Submibtn btn btn-primary col-xs-4 col-xs-offset-3' type='button'>").text("Book Destination");
 
 	// construct the elements together into a cohesive layout

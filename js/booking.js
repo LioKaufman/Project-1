@@ -32,7 +32,7 @@ function destinationMapAPI() {
 
    marker.setMap(map);
       
-   var infowindow = new google.maps.InfoWindow({content: markerInfo});
+   // var infowindow = new google.maps.InfoWindow({content: markerInfo});
     
-   infowindow.open(map,marker);
+   // infowindow.open(map,marker);
 }; // end function show google Map API.

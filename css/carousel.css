@@ -2,16 +2,26 @@
 
     margin: auto;
 }
-h1 {
+
+.carousel {
+	margin: 2px 1px;
+}
+
+.carousel h1 {
     font-size: 3em;
 }
-p {
+.carousel p {
     font-size: 1.3em;
 }
-a {
+.carousel a {
     color: white;
 }
-a:hover {
+.carousel a:hover {
     color: white;
     font-size: 1.1em;
+}
+.jumbotron {
+	height: 400px;
+	padding: ;
+	margin: 0px 15px 2px 15px;
 }

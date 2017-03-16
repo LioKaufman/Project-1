@@ -185,7 +185,7 @@ function getDiscount(discountCode, codes) {
         currentCodes = codes;
     }
 
-    var selectedDiscount;
+    var selectedDiscount = 0;
     try {
         selectedDiscount = currentCodes[discountCode];
     } catch (err) {

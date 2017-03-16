@@ -44,7 +44,8 @@ function calcDiscount(firstName, discountCode) {
     }
 
     // check promocode discount
-    discount +=  getDiscount(discountCode);
+	var discountCodeDiscount = getDiscount(discountCode);
+    discount +=  discountCodeDiscount;
 
     //check offer discount
 
@@ -57,8 +58,12 @@ function calcDiscount(firstName, discountCode) {
 function calcPrice(discountRate) {
 	 var selectedPackage = JSON.parse(localStorage.getItem("destination"));
 	 var customerInfo = JSON.parse(localStorage.getItem("customerData"));
-
-	 var PriceQuote = (selectedPackage.BaseRate+(selectedPackage.Extra*customerInfo.passengers)*customerInfo.nights)*discountRate;
+	 var PriceQuote = Number(selectedPackage.BaseRate);
+	 PriceQuote += selectedPackage.Extra*Number(customerInfo.nights);
+	 PriceQuote *= Number(customerInfo.passengers);
+	 PriceQuote *= (1-discountRate);
+	 //var PriceQuote = (selectedPackage.BaseRate+(selectedPackage.Extra*Number(customerInfo.passengers))*Number(customerInfo.nights))*discountRate;
+	 console.log(PriceQuote);
 
 	 return PriceQuote;
 

@@ -283,12 +283,16 @@ function startGame() {
  * The button to start the game.
  * @type {*}
  */
-var startGameButton = $("<button type='button' class='btn btn-primary' data-toggle='modal' data-target='.game--modal'>").text(" Discount Game! ");
-startGameButton.click(function () {
-    //testForm = new Question(countries[0], 1, 5);
-    //testForm.show();
-    startGame();
-});
+
+function GameButton() {
+    var startGameButton = $("<button type='button' class='btn btn-primary' data-toggle='modal' data-target='.game--modal'>").text(" Discount Game! ");
+    startGameButton.click(function () {
+        //testForm = new Question(countries[0], 1, 5);
+        //testForm.show();
+        startGame();
+    });
+    return startGameButton;
+}
 
 
 /**
@@ -301,5 +305,7 @@ var gameModal = $("<div class='modal fade game--modal' tabindex='-1' role='dialo
 /**
  * Appending the game button and the game Modal to the index.html page.
  */
-$("#navigation").append(startGameButton);
-$("main.container").append(gameModal);
+$("#indexGame").append(GameButton());
+$("#game").append(GameButton());
+
+$(".container").append(gameModal);

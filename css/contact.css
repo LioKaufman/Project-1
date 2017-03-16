@@ -38,6 +38,18 @@
 	background-color: #bbbbbb;
 }
 
+
+.navbar {
+    background-color: lightblue;
+    color: black;
+    box-shadow: 5px 5px 9px 1px rgba(84, 84, 84, 0.57);
+}
+nav.navbar {
+    color: black;
+}
+
+
+
 @media (min-width: 1300px) {
 	
 

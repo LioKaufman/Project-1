@@ -1,8 +1,11 @@
 // Main function to run on submittion of bookign data
 $("#packageSubmitBtn").click(function(){
-	getBookingInfo();
-	calcPrice();
-	showPaymentForm();
+
+	var Customer = getBookingInfo();
+	var DiscountRate = calcDiscount(Customer.firstName, Customer.promoCode);
+	var PriceQuote = calcPrice(DiscountRate);
+
+	showPaymentForm(PriceQuote);
 }); // end main function.
 
 
@@ -25,20 +28,48 @@ function getBookingInfo() {
 };  // end function getBookingData. 
 
 
+// function adds discounts: 20% if customer's first name starts with 'C', 'L', 'H', 'I', or 'G'. Upto 10% from Cupon...
+function calcDiscount(firstName, discountCode) {
+    var discount = 0;
+
+    // check name discount
+    var firstNameBegin = firstName.charAt(0).toUpperCase();
+    switch (firstNameBegin) {
+        case "C":
+        case "L":
+        case "H":
+        case "I":
+        case "G":
+            discount += 0.2;
+            break;
+        default:
+            break;
+    }
+
+    // check promocode discount
+    discount +=  getDiscount(discountCode);
+
+    //check offer discount
+
+
+    return discount;
+}
+
+
 // function to claculate the final price, including discounts, of the selected package. 
-function calcPrice() {
+function calcPrice(discountRate) {
 	 var selectedPackage = JSON.parse(localStorage.getItem("destination"));
 	 var customerInfo = JSON.parse(localStorage.getItem("customerData"));
 
-	 var PriceQuote = selectedPackage.
-
+	 var PriceQuote = (selectedPackage.BaseRate+(selectedPackage.Extra*customerInfo.passengers)*customerInfo.nights)*discountRate;
 
 	 return PriceQuote;
 
 };  // end function clacPrice.
 
+
 // Calls the payment request form in a Modal page on click of package selection button.
-function showPaymentForm() {
+function showPaymentForm(PriceQuote) {
 
 	// Constract the payment div elements
 	var paymentCard = $("<div class='bookingForm col-xs-8 col-xs-offset-2 modal-content'>");
@@ -46,7 +77,7 @@ function showPaymentForm() {
 	var heading = $("<h3>").text("Payment Details");
 	var bankIBAN = $("<input id='paymentIBAN' class='input-lg col-xs-5' type='text' name='IBAN' placeholder='IBAN Code'>");
 	var banBIC =$("<input id='paymentBIC' class='input-lg col-xs-5 col-xs-offset-2' type='text' name='BIC' placeholder='BIC Code'>");
-	var Price = $("<div id='totalPrice' class='input-lg col-xs-5'>");
+	var Price = $("<div id='totalPrice' class='input-lg col-xs-5'>").text(PriceQuote);
 	var Button = $("<button id='bookingSubmitBtn' class='Submibtn btn btn-primary col-xs-4 col-xs-offset-3' type='button'>").text("Book Destination");
 
 	// construct the elements together into a cohesive layout
@@ -60,29 +91,4 @@ function showPaymentForm() {
 	$("#paymentDetails").html(paymentCard);
 
 };  // end function payment div in modal page.
-
-
-
-
-
-// function to add 20% discount if customer's first name starts with 'C', 'L', 'H', 'I', or 'G'. 
-function calculateDiscount(firstName, discountCode) {
-    var discount = 0;
-
-    var firstNameBegin = firstName.charAt(0).toUpperCase();
-    switch (firstNameBegin) {
-        case "C":
-        case "L":
-        case "H":
-        case "I":
-        case "G":
-            discount += 0.2;
-            break;
-        default:
-            break;
-    }
-    discount +=  getDiscount(discountCode);
-
-    return discount;
-}
 

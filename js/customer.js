@@ -10,11 +10,6 @@ $(window).on("load", function () {
 });
 
 
-function saveCustomerData(firstName, lastName) {
-    localStorage.setItem("firstName", firstName);
-    localStorage.setItem("lastName", lastName);
-}
-
 function getCustomerData() {
     var restoredData = {};
     restoredData.firstName = localStorage.getItem("firstName");
@@ -22,17 +17,6 @@ function getCustomerData() {
     return restoredData;
 }
 
-function getBookingInfo() {
-    var bookingData = {};
-    bookingData.firstName = $("#bookingFirstName").val();
-    bookingData.lastName = $("#bookingLastName").val();
-    bookingData.email = $("#bookingEmail").val();
-    bookingData.passengers = $("#bookingPassengers").val();
-    bookingData.date = $("#date").val();
-    bookingData.nights = $("#bookingNights").val();
-    bookingData.promoCode = $("#bookingPromoCode").val();
-    return bookingData;
-}
 
 function validateBooking(bookingData) {
 

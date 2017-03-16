@@ -274,6 +274,7 @@ function startGame() {
     }
     firstForm.show();
     questionForms.pop().submitButton.click(function () {
+        globalScore += currentForm.scoreAnswer();
         showResults(globalScore);
     });
 

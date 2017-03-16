@@ -25,3 +25,13 @@ function officeLocation() {
     i++
   };  // end of loop.
 };  // end of map API function.
+
+
+$(window).on("load", function () {
+    var restoredData = JSON.parse(localStorage.getItem("customerData"));
+    console.log($("#bookingFirstName"));
+    $("#formFirstName").val(restoredData.firstName);
+    $("#formSurname").val(restoredData.lastName);
+    $("#formEmail").val(restoredData.email);
+});
+

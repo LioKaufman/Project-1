@@ -1,0 +1,17 @@
+.carousel-inner img {
+
+    margin: auto;
+}
+h1 {
+    font-size: 3em;
+}
+p {
+    font-size: 1.3em;
+}
+a {
+    color: white;
+}
+a:hover {
+    color: white;
+    font-size: 1.1em;
+}

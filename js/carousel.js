@@ -12,12 +12,12 @@ function Carousel(id) {
     this.mainElement.append(this.indicatorsElement).append(this.innerElement);
 
     this.controlDefault = {
-        'prev': {'icon': "glyphicon-chevron-left", 'text': 'Previous'},
-        'next': {'icon': "glyphicon-chevron-right", 'text': 'Next'}
+        'prev': {'icon': "glyphicon-chevron-left", 'text': 'Previous', 'class': 'left'},
+        'next': {'icon': "glyphicon-chevron-right", 'text': 'Next', 'class': 'right'}
     };
 
     this.addControl = function (dataSlide) {
-        var element = $('<a class="left carousel-control" role="button">')
+        var element = $('<a class="carousel-control" role="button">').addClass(this.controlDefault[dataSlide].class)
             .attr('href', '#'+this.id)
             .attr('data-slide', dataSlide);
         $('<span class="glyphicon" aria-hidden="true">')
@@ -31,6 +31,7 @@ function Carousel(id) {
         if (this.elementCount == 0) {
             element.addClass("active");
         }
+        this.elementCount++;
         this.indicatorsElement.append(element);
     };
 
@@ -56,9 +57,26 @@ function Carousel(id) {
     };
 }
 
+/*
+ {
+ Title: "Thailand",
+ Picture: "../img/locations/thailand.jpg",
+ BaseRate: 500,
+ Extra: 30,
+ Latitude: 13.75,
+ Longitude: 100.50,
+ Desc: "Our tours to Thailand are one of the most popular on our entire website. We'll fly you in to Bangkok where you start your trip seeing the capital city and eat amazing street food. We'll then take you on a tour through Chiang Mai in the north, and the beautiful southern island of Phuket."
+ },
+*/
+function destinationPane(destination, linkURL, removeDotsFromImageURL) {
 
-
-function destinationPane(imageURL, imageAlt, linkURL, title, paragraph) {
+    var imageURL = destination.Picture;
+    var imageAlt = "picture of "+destination.Title;
+    var title = destination.Title;
+    var paragraph = destination.CarouselText;
+    if ( removeDotsFromImageURL === true ) {
+        imageURL = imageURL.substring(3);
+    }
     var element = $('<div class="item">');
     var image = $('<img>').attr('src', imageURL).attr('alt', imageAlt);
     var caption = $('<div class="carousel-caption">');
@@ -69,11 +87,20 @@ function destinationPane(imageURL, imageAlt, linkURL, title, paragraph) {
     element.append(image).append(caption);
     return element;
 
-
 }
-
+/**
 $('#myCarousel').empty();
 var myCarousel = new Carousel("myCarousel");
 myCarousel.addControl('prev');
 myCarousel.addControl('next');
-myCarousel.addItem(destinationPane("../img/locations/thailand.jpg", "thailand", "booking.html", "Thailand", "Bangkok, Phuket, and Chiang Mai"));
+destinations.map(function (destination) {
+    myCarousel.addItem(destinationPane(destination, 'booking.html'));
+});
+**/
+
+var mainCarouselOffers = new Carousel("mainCarouselOffers");
+mainCarouselOffers.addControl('prev');
+mainCarouselOffers.addControl('next');
+destinations.map(function (destination) {
+    mainCarouselOffers.addItem(destinationPane(destination, 'pages/booking.html', true));
+});

@@ -210,11 +210,11 @@ function resetDiscounts() {
  */
 function createDiscountCode(amount) {
     var currentCodes = JSON.parse(localStorage.getItem("discountCodes"));
-    do  {
+    //do  {
         var discountCode = generateDiscountCode();
         var currentDiscount = getDiscount(discountCode, currentCodes);
-        console.log('*');
-    } while ( currentCodes !== null && !(currentDiscount in currentCodes));
+       // console.log('*');
+    //} while ( currentCodes !== null && !(currentDiscount in currentCodes));
     var newCode = {};
     newCode[discountCode] = amount;
     console.log(newCode);

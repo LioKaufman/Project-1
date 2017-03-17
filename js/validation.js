@@ -6,7 +6,7 @@
 // settings of validation fields
 const validationSettings = {
     phoneNumber: {
-        regex: /^(\+|0|00){10}$/,
+        regex: /^[\+|0][0-9 ]+$/,
         message: "Please enter a valid Phone Number with area code.",
         optional: true
     },

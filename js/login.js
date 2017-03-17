@@ -7,6 +7,7 @@ function getCustomerData() {
 
     // check if customer data in local storage
     if (localStorage.hasOwnProperty("customerData")){
+        // return the customer object and exit the function in case customerData is found.
         return JSON.parse(localStorage.getItem("customerData"));
     }
 

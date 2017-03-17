@@ -22,7 +22,7 @@ function getBookingInfo() {
 
     localStorage.setItem("customerData", JSON.stringify(bookingData));
     return bookingData;
-};  // end function getBookingData. 
+}  // end function getBookingData.
 
 
 // function adds discounts: 20% if customer's first name starts with 'C', 'L', 'H', 'I', or 'G'. Upto 10% from Cupon...
@@ -45,6 +45,7 @@ function calcDiscount(firstName, discountCode) {
 
     // check promocode discount
 	var discountCodeDiscount = getDiscount(discountCode);
+    if (discountCodeDiscount)
     discount +=  discountCodeDiscount;
 
     //check offer discount
@@ -67,7 +68,7 @@ function calcPrice(discountRate) {
 
 	 return PriceQuote;
 
-};  // end function clacPrice.
+}  // end function clacPrice.
 
 
 // Calls the payment request form in a Modal page on click of package selection button.
@@ -92,5 +93,5 @@ function showPaymentForm(PriceQuote) {
 	// display content
 	$("#paymentDetails").html(paymentCard);
 
-};  // end function payment div in modal page.
+}  // end function payment div in modal page.
 

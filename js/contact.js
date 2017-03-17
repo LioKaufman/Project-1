@@ -23,8 +23,8 @@ function officeLocation() {
     
     infowindow.open(map,marker);
     i++
-  };  // end of loop.
-};  // end of map API function.
+  }  // end of loop.
+}  // end of map API function.
 
 
 $(window).on("load", function () {

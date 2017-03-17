@@ -15,7 +15,7 @@ function showPackage() {
 
    // displys picture of selected locaiton
    $("#packagePicture").append(packageImg);
-}; // End of function showPackage.
+} // End of function showPackage.
 
 showPackage();
 
@@ -38,7 +38,7 @@ function destinationMapAPI() {
    // var infowindow = new google.maps.InfoWindow({content: markerInfo});
     
    // infowindow.open(map,marker);
-}; // end function show google Map API.
+} // end function show google Map API.
 
 $(window).on("load", function () {
     var restoredData = JSON.parse(localStorage.getItem("customerData"));

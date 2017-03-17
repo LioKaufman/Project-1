@@ -1,0 +1,122 @@
+var destinations = [
+    {
+        Title: "Thailand",
+        Picture: "../img/locations/thailand.jpg",
+        BaseRate: 500,
+        Extra: 30,
+        Latitude: 13.75,
+        Longitude: 100.50,
+        CarouselText: "Bangkok, Phuket, and Chiang Mai",
+        Desc: "Our tours to Thailand are one of the most popular on our entire website. We'll fly you in to Bangkok where you start your trip seeing the capital city and eat amazing street food. We'll then take you on a tour through Chiang Mai in the north, and the beautiful southern island of Phuket."
+    },
+    {
+        Title: "Egypt",
+        Picture: "../img/locations/egypt.jpg",
+        BaseRate: 200,
+        Extra: 20,
+        Latitude: 30.04,
+        Longitude: 31.24,
+        CarouselText: "Cairo, Luxor, Sharm El-Sheik",
+        Desc: "Our pacakge to Egypt is an unforgettable experience. From seeing the timeless pyraminds of Giza and the Sphinx, to a river cruise along the Nile, you will have memories to last a lifetime. We also take you for scuba diving in the Red Sea at Sharm El Sheik, and an excusrsion to Luxor in the south to visit the Valley of the Kings."
+    },
+    {
+        Title: "United States",
+        Picture: "../img/locations/usa.jpg",
+        BaseRate: 400,
+        Extra: 70,
+        Latitude: 40.78,
+        Longitude: -73.97,
+        CarouselText: "New York, California, Texas",
+        Desc: "Our USA tour starts off in New York City, finises in Los Angeles, and has stops in Florida and Texas along the way, all by cross-country rail. There is no better way to see all the best sights America has to offer. We also take a side trip to see the Grand Canyon and Roswell, New Mexico in the Southwest."
+    },
+    {
+        Title: "Brazil",
+        Picture: "../img/locations/brazil.jpg",
+        BaseRate: 700,
+        Extra: 40,
+        Latitude: -22.92,
+        Longitude: -43.19,
+        CarouselText: "Rio de Janeiro, Sao Paulo, Florianopolis",
+        Desc: "Visiting Brazil is the experience of a lifetime. Seeing the Cristo Redentor in Rio de Janeiro from a hill overlooking the entire city at sunset, is on everyone's bucket list. We also include a visit to Florianopolis in the south to visit some amazing beaches and try out your paragliding skills as well!"
+    },
+    {
+        Title: "South Korea",
+        Picture: "../img/locations/korea.jpg",
+        BaseRate: 350,
+        Extra: 50,
+        Latitude: 37.54,
+        Longitude: 126.93,
+        CarouselText: "Seoul, Busan, Jeju",
+        Desc: "Visit South Korea for a cultural experience like no other. We start from Seoul with a full day trip to the DMZ, the most controversial border in the world, where the Korean War technically has never ended! Along the way you'll experience Soju, Korean BBQ, and the all night experience of partying in Itaewon. We finish the tour with the beautiful coastal city of Busan in the south."
+    },
+    {
+        Title: "Australia",
+        Picture: "../img/locations/australia.jpg",
+        BaseRate: 700,
+        Extra: 60,
+        Latitude: -33.86,
+        Longitude: 151.21,
+        CarouselText: "Sydney, Melbourne, Brisbane",
+        Desc: "If you fancy seeing some kangaroos, snakes, and jellyfish, you'll get all of that and more, with our Australia package! We'll visit Sydney and Melbourne on this trip, see some amazing coastline, beaches, animals, and the funniest english accent you'll ever meet on this side of the equator! The Sydney Opera house is world famous and you'll have an amazing view of it while climbing to the top of the Sydney Harbor Bridge!"
+    },
+    {
+        Title: "France",
+        Picture: "../img/locations/france.jpg",
+        BaseRate: 250,
+        Extra: 60,
+        Latitude: 48.85,
+        Longitude: 2.34,
+        CarouselText: "Paris, Normandy, Bordeaux",
+        Desc: "Everyone has to visit France at least once in their life! We will stop in Paris to see the Eiffel Tower, Arc de Triumph, Notre Dame, and the best croissants you'll ever eat! Then we head west to see the beaches of Normandy, the historical site from the D-Day landings of World War Two. Finally we'll head south to Bordeaux and Lyon to cap off this trip."
+    },
+    {
+        Title: "South Africa",
+        Picture: "../img/locations/southAfrica.jpg",
+        BaseRate: 400,
+        Extra: 40,
+        Latitude: -33.92,
+        Longitude: 18.42,
+        CarouselText: "Johannesburg, Cape Town, Durban",
+        Desc: "We fly into Johannesburg to start the tour and spend a few days, then you'll be whisked off to Cape Town in the south, where you can see sharks, climb Table Mountain and Lion's Head, take some relaxing tours of the local vineyards, and hike to Cape Point, the southernmost point of the entire African continent!"
+    },
+    {
+        Title: "Portugal",
+        Picture: "../img/locations/portugal.jpg",
+        BaseRate: 250,
+        Extra: 50,
+        Latitude: 38.72,
+        Longitude: -9.13,
+        CarouselText: "Lisbon, Porto, Faro",
+        Desc: "Portugal is one of Europe's best kept secrets, but we've got the inside scoop on it all! We'll visit Porto and Lisbon, the 2 biggest cities in Portugal, where you can indulge on amazing food and wine, and see all the historical sites of one of the oldest countries of Europe. We finish the tour with the pristine beaches of Faro in the south."
+    },
+    {
+        Title: "Mexico",
+        Picture: "../img/locations/mexico.jpg",
+        BaseRate: 750,
+        Extra: 40,
+        Latitude: 19.43,
+        Longitude: -99.13,
+        CarouselText: "Mexico City, Guadalajara, Cancun",
+        Desc: "If you love tequila and tacos, our Mexico tour is just for you! This is one of the best countries in the world to satisfy your taste buds, and we'll also include some memororable sightseeing destinations as well, like the pyramids of Teotihuacan and Chichen Itza, the Jose Cuervo tequila distillery, and the party beaches of Cancun and Playa del Carmen on the Yucatan peninsula."
+    },
+    {
+        Title: "India",
+        Picture: "../img/locations/india.jpg",
+        BaseRate: 450,
+        Extra: 30,
+        Latitude: 28.70,
+        Longitude: 77.10,
+        CarouselText: "Mumbai, Delhi, Agra, Chennai",
+        Desc: "We've got a full itinerary on the slate for you if you choose our India package. Mumbai, Delhi, the Taj Mahal, and amazing vegetarian food are all part of this journey. Experience a culture like none other around the world. Just watch out for elephants and cows crossing the road!"
+    },
+    {
+        Title: "Iceland",
+        Picture: "../img/locations/iceland.jpg",
+        BaseRate: 300,
+        Extra: 70,
+        Latitude: 64.12,
+        Longitude: -21.81,
+        CarouselText: "Reykjavik, Golden Circle, Vik",
+        Desc: "Contrary to popular belief, Iceland is actually not full of ice! And in the summertime, its actually quite warm, try out the black sand beaches in the south if you're feeling adventurous! We fly in to the capital region to see Reykyjavik and meet our local guides, who will then take us on a tour of the Golden Circle, to see the waterfalls of Gullfoss, the Continental Divide, and try out fermented shark meat, a specialty amongst the locals!"
+    }
+];

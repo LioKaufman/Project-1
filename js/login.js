@@ -11,7 +11,7 @@ function getCustomerData() {
     }
 
     // if there isn't return empty customer object
-    return { firstName: "", lastName: "", eMail: "" }
+    return { firstName: "", lastName: "", eMail: "", BIC: "", IBAN: ""}
 }
 
 // helper function to set customer data in local storage
@@ -34,4 +34,9 @@ $(document).on("ready", function () {
     $(".formFirstName").val(customer.firstName);
     $(".formLastName").val(customer.lastName);
     $(".formEmail").val(customer.eMail);
+
+    // additional fields for payment, might move to another file
+    $(".formBIC").val(customer.BIC);
+    $(".formIBAN").val(customer.IBAN);
+
 });

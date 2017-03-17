@@ -48,4 +48,9 @@ function validateField(fieldName, fieldContent) {
     return { valid: false, message: setting.message }
 }
 
+$("input[type=email]").on("input", function () {
+    var fieldContent = $(this).val();
+    validationResult = validateField("eMail", fieldContent);
+    console.log(validationResult);
 
+});

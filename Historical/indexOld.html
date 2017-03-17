@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mount Everest Travel Agency</title>
+    <!-- Links to AJAX libraries on google -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <!-- Links to online Boostrap CDN  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Links to personal CSS files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/carousel.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="index.html"><img class="navbar-brand" src="img/icons/logo-navbar.png" alt="logo"></a>
+                <a class="navbar-brand" href="index.html">Mount Everest Agency</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Offers<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#Thailand">Thailand</a></li>
+                            <li><a href="#Egypt">Egypt</a></li>
+                            <li><a href="#United States">United States</a></li>
+                            <li><a href="#Brazil">Brazil</a></li>
+                            <li><a href="#South Korea">South Korea</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="pages/destinations.html">Destinations</a></li>
+                    <li id="gameNav"></li>
+                    
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a id="logoutButton" href="#">Logout</a></li>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="pages/contact.html">Contact</a></li>
+
+                    </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <main class="container">
+        <nav id="navigation" class="row">
+        </nav>
+        <header class="row">
+            <div class="col-md-4" id="welcome">
+                <article class="row">
+                    <div class="jumbotron">
+                        <h2>Welcome to Mount Everest Agency!</h2>
+                        <p>We have the best offers for tours to destinations all over the world.</p>
+                        <p><a class="btn btn-primary btn-lg" href="pages/contact.html" role="button">Contact us!</a></p>
+                    </div>
+                </article>
+            </div>
+            <div id="Hero" class="col-md-8">
+                <div id="mainCarouselOffers" class="carousel slide" data-ride="carousel">
+                </div>
+            </div>
+        </header>
+        <article class="row">
+            <div class="col-xs-12">
+                <div id="mainCarouselDestinations" class="carousel slide" data-ride="carousel">
+                </div>
+            </div>
+        </article>
+        <article class="row">
+            <div class="col-md-8 ">
+                <div id="mainCarouselTestimonials" class="carousel slide" data-ride="carousel">
+                </div>
+            </div>
+            
+
+ <div id="indexGame" class="jumbotron col-md-4">
+    
+        <h3>Get 10% off!</h3>
+        <img id="gameIcon" src="img/icons/game.png" alt="game">
+    
+</div>
+
+
+        </article>
+        <article class="row">
+        </article>
+        <footer class="row">
+        </footer>
+    </main>
+    <!-- include destinations.js for now maybe use json file for offers data later -->
+    <script type="text/javascript" src="data/destinations.js"></script>
+    <script type="text/javascript" src="data/offers.js"></script>
+
+    <script type="text/javascript" src="js/destinations.js"></script>
+    <script type="text/javascript" src="data/testimonials.js"></script>
+    <!-- Links to personal JavaScrip files -->
+    <script type="text/javascript" src="js/carousel.js"></script>
+    <script type="text/javascript" src="js/game.js"></script>
+</body>
+
+</html>

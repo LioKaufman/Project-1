@@ -36,7 +36,7 @@ function validateField(fieldName, fieldContent) {
     if (setting.optional && (typeof fieldContent === "undefined" || fieldContent == "")) {
         return { valid: true, message: "ok" };
     }
-    // test if the fieldContent is valid
+    // test if the fieldContent is valid according to the regular expression
     if (setting.regex.test(fieldContent)) {
         return { valid: true, message: "ok" };
     }

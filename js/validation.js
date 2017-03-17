@@ -30,10 +30,14 @@ const validationSettings = {
 
 // check if a given string in fieldContent validates according to a setting in fieldName
 function validateField(fieldName, fieldContent) {
+    // correct for undefined fieldContent
+    if (typeof fieldContent === "undefined") {
+        fieldContent = "";
+    }
     // store the selected setting
     const setting = validationSettings[fieldName];
     // test if field is optional and it doesn't contain any value
-    if (setting.optional && (typeof fieldContent === "undefined" || fieldContent == "")) {
+    if (setting.optional && fieldContent == "") {
         return { valid: true, message: "ok" };
     }
     // test if the fieldContent is valid according to the regular expression

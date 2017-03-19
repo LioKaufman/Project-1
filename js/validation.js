@@ -65,7 +65,7 @@ $(document).ready(function () {
 
             promoCode: {
                 validators: {
-                    regex: {
+                    regexp: {
                         regexp: /^\d{5}$/,
                         message: 'Please enter a 5-digit discount code.'
                     }

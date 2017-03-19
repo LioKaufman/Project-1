@@ -1,120 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Mount Everest Travel Agency | Bookings</title>
-	<!-- Links to AJAX libraries on google -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-	<!-- Links to online Boostrap CDN  -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<!-- Links to personal CSS files -->
+    <meta charset="UTF-8">
+    <title>Mount Everest Travel Agency | Bookings</title>
+    <!-- Links to AJAX libraries on google -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <!-- Links to online Boostrap CDN  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- jquery bootstrap validator -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"></script>
+
+    <!-- Links to personal CSS files -->
     <link rel="stylesheet" href="../css/booking.css">
+    <link rel="stylesheet" href="../css/forms.css">
 </head>
 <body>
 
 
 <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="../index.html"><img class="navbar-brand" src="../img/icons/logo-navbar.png" alt="logo"></a>
-                <a class="navbar-brand" href="../index.html">Mount Everest Agency</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Offers<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#Thailand">Thailand</a></li>
-                            <li><a href="#Egypt">Egypt</a></li>
-                            <li><a href="#United States">United States</a></li>
-                            <li><a href="#Brazil">Brazil</a></li>
-                            <li><a href="#South Korea">South Korea</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="../pages/destinations.html">Destinations</a></li>
-                    <li id="gameNav"></li>
-
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="../pages/booking.html">Logout</a></li>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="../pages/contact.html">Contact</a></li>
-                    </ul>
-            </div>
-            <!-- /.navbar-collapse -->
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="../index.html"><img class="navbar-brand" src="../img/icons/logo-navbar.png" alt="logo"></a>
+            <a class="navbar-brand" href="../index.html">Mount Everest Agency</a>
         </div>
-        <!-- /.container-fluid -->
-    </nav>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Offers<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#Thailand">Thailand</a></li>
+                        <li><a href="#Egypt">Egypt</a></li>
+                        <li><a href="#United States">United States</a></li>
+                        <li><a href="#Brazil">Brazil</a></li>
+                        <li><a href="#South Korea">South Korea</a></li>
+                    </ul>
+                </li>
+                <li><a href="../pages/destinations.html">Destinations</a></li>
+                <li id="gameNav"></li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="../pages/booking.html">Logout</a></li>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="../pages/contact.html">Contact</a></li>
+                </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
 
 
-	<main class="container">
-		<section id="package" class="bookingForm row">
-			<figure id="packagePicture" class="col-lg-7">
+<main class="container">
+    <section id="package" class="bookingForm row">
+        <figure id="packagePicture" class="col-lg-7">
 
-			</figure>
-			<div id="mapFrame" class="col-lg-5">
-				<div id="packageMapAPI">
+        </figure>
+        <div id="mapFrame" class="col-lg-5">
+            <div id="packageMapAPI">
 
-				</div>
-			</div>
-		</section>
-		<section class="row">
-			<div class="bookingForm col-md-9">
-				<section class="row">
-					<h3>Booking Details</h3>
-				</section>
+            </div>
+        </div>
+    </section>
+    <section class="row">
+        <div class="col-xs-9">
+            <section class="row">
+                <h3>Booking Details</h3>
+            </section>
+            <form class="bookingForm">
 
-				<section class="row">
-					<input id="bookingFirstName" class="input-lg col-xs-5" type="text" name="firstName" placeholder="First Name">
-					<input id="bookingLastName" class="input-lg col-xs-5 col-xs-offset-2" type="text" name="lastName" placeholder="Surname">
-				</section>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <label class="control-label">First Name</label>
+                            <input id="bookingFirstName" class="form-control"
+                                   type="text"
+                                   name="firstName">
 
-				<section class="row input-group">
-					<span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-send"></i></span>
-					<input id="bookingEmail" class="input-lg col-xs-12" type="email" name="eMail" placeholder="Email Address">
-				</section>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <label class="control-label">Last Name</label>
+                            <input id="bookingLastName" class="form-control" type="text" name="lastName"></div>
+                    </div>
+                </div>
 
-				<section class="row">
-					<input id="bookingPassengers" class="input-lg col-xs-3" type="number" name="passengers" min="1" max="10" step="1" placeholder="No. of people">
-					<input id="bookingDate" class="input-lg col-xs-4 col-xs-offset-1" type="date" name="date">
-					<input id="bookingNights" class="input-lg col-xs-3 col-xs-offset-1" type="number" name="passengers" min="1" max="28" step="1" placeholder="No. Nights">
-				</section>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <label class="control-label">Email Address</label>
+                            <div class="input-group">
 
-				<section class="row input-group">
-					<span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-tag"></i></span>
-					<input id="bookingPromoCode" class="input-lg col-md-7" type="text" name="promoCode" placeholder="Promotion Code:">
-					<button id="packageSubmitBtn" class="Submibtn btn btn-primary col-md-3 col-md-offset-2" type="button" data-toggle='modal' data-target='#paymentDetails'>Select Package</button>
-				</section>
-			</div>
-			 <div id="game" class="jumbotron col-md-3">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                <input id="bookingEmail" class="form-control" type="email" name="eMail"
+                                       placeholder="Email Address">
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        <h3>Get 10% off!</h3>
-        <img id="gameIcon" src="../img/icons/game.png" alt="game">
 
-	</div>
-		</section>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label class="control-label">No. of People</label>
 
-		<section id="paymentDetails" class="row modal fade">
-		</section>
+                            <input id="bookingPassengers" class="form-control"
+                                   type="number" name="passengers" min="1" max="10" step="1"
+                                   placeholder="No. of people"></div>
 
-	</main>
+                        <div class="col-xs-3">
+                            <label class="control-label">No. of Nights</label>
 
-	 <!-- Links to personal JavaScrip files -->
-	<script type="text/javascript" src="../js/validation.js"></script>
-	<script type="text/javascript" src="../js/booking.js"></script>
-    <script type="text/javascript" src="../js/payment.js"></script>
-	<script type="text/javascript" src="../js/game.js"></script>
-	 <!-- Links google maps API files -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQPrJInf7pkoQjHI6iQLW4y5BColVBRQA&callback=destinationMapAPI"></script>
+                                <input id="bookingNights" class="form-control"
+                                       type="number" name="nights"
+                                       min="1" max="28" step="1"
+                                       placeholder="No. Nights">
+                        </div>
+
+                        <div class="col-xs-6">
+                            <label class="control-label">Departure Date</label>
+
+                                <input id="bookingDate" class="form-control"
+                                       type="date" name="date">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <label class="control-label">Promotion Code</label>
+
+                            <div class="input-group"><span class="input-group-addon"><i
+                                    class="glyphicon glyphicon-tag"></i></span>
+                                <input id="bookingPromoCode" class="form-control" type="text" name="promoCode"
+                                       placeholder="Promotion Code:"></div>
+                        </div>
+
+                        <div class="col-xs-4">
+                            <button id="packageSubmitBtn" class="Submibtn btn btn-primary" type="button"
+                                    data-target='#paymentDetails'>Select Package
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div id="game" class="jumbotron col-md-3">
+
+            <h3>Get 10% off!</h3>
+            <img id="gameIcon" src="../img/icons/game.png" alt="game">
+
+        </div>
+    </section>
+
+    <section id="paymentDetails" class="row modal fade">
+    </section>
+
+</main>
+
+<!-- Links to personal JavaScrip files -->
+
+<script type="text/javascript" src="../js/validation.js"></script>
+<script type="text/javascript" src="../js/booking.js"></script>
+<script type="text/javascript" src="../js/payment.js"></script>
+<script type="text/javascript" src="../js/game.js"></script>
+<!-- Links google maps API files -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQPrJInf7pkoQjHI6iQLW4y5BColVBRQA&callback=destinationMapAPI"></script>
 </body>
 </html>

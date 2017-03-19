@@ -1,0 +1,4 @@
+/* Adjust feedback icon position */
+.form-control-feedback {
+    right: 15px;
+}

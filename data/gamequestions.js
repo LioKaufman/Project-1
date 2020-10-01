@@ -29,4 +29,5 @@ var countries = [
     {question: "In which capital city can you cross the Thames River?", answer: "London"},
     {question: "Which capital city is closest to Machu Picchu?", answer: "Lima"},
     {question: "Which capital city was home to Fidel Castro?", answer: "Havana"}
+    {question: "Which country is the least visited country in the world?", answer: "Tuvalu"}
 ];
